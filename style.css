@@ -1,3 +1,5 @@
+@import url('desktop.css');
+
 @font-face {
     font-family: "Poppins-Regular";
     src: url("Poppins-Regular.ttf") format("ttf");
@@ -5,6 +7,9 @@
 
 :root {
     --primary: #18122B;
+    --darkest: #393053;
+    --dark: #443C68;
+    --ligth-dark: #635985;
     --white: #fafafa;
 }
 
