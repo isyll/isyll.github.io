@@ -1,4 +1,10 @@
 {
   "french": "French",
-  "english": "English"
+  "english": "English",
+  "in_french": "French version",
+  "in_english": "English version",
+  "resume": "Resume",
+  "all_projects": "All projects",
+  "Bio": "Bio",
+  "contact": "Contact"
 }

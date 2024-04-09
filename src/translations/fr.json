@@ -1,5 +1,10 @@
 {
-    "french": "Français",
-    "english": "Anglais"
-  }
-  
+  "french": "Français",
+  "english": "Anglais",
+  "in_french": "En français",
+  "in_english": "En anglais",
+  "resume": "Curriculum Vitæ",
+  "all_projects": "Tous les projets",
+  "bio": "Bio",
+  "contact": "Contact"
+}
