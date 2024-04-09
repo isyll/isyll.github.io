@@ -1,10 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ibrahima Sylla",
+  "name": "Ibrahima Sylla's Portfolio",
+  "description": "this website is the showcase where I exhibit my achievements and my development projects",
+  "dir": "ltr",
+  "lang": "en",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "256x256 128x128 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
@@ -18,8 +21,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./?utm_source=web_app_manifest",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#dfdfd6",
+  "background_color": "#1b1b1f"
 }
