@@ -5,7 +5,12 @@ import MenuItem, { hasSubItems } from '../types/MenuItem'
 import { ReactComponent as GithubLogo } from '../svgs/github-logo.svg'
 import { ReactComponent as LinkedinLogo } from '../svgs/linkedin-logo.svg'
 import socials from '../data/socials'
-import { ucfirst } from '../utils/strings'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '../components/ui/hover-card'
+import { ChevronDown, FileText } from 'lucide-react'
 
 function Header() {
   return (
@@ -56,13 +61,25 @@ function Menu() {
       {menuItems.map((item, index) => {
         if (hasSubItems(item)) {
           return (
-            <a
-              key={index}
-              href={item.url}
-              className="items-center font-semibold capitalize hover-color"
-            >
-              {ucfirst(t(item.name))}
-            </a>
+            <HoverCard openDelay={0} closeDelay={0}>
+              <HoverCardTrigger>
+                <a
+                  href={item.url}
+                  className="flex items-center font-semibold hover-color"
+                >
+                  {item.name}
+                  <ChevronDown />
+                </a>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-50 border-none shadow-sm">
+                {item.subItems?.map((sub) => (
+                  <div className="flex gap-2 hover-color pb-3">
+                    <FileText size={20} />
+                    <a href={sub.url}>{sub.name}</a>
+                  </div>
+                ))}
+              </HoverCardContent>
+            </HoverCard>
           )
         }
         return (
