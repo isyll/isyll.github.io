@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { availableLanguages } from '../i18n'
 import { ChangeEvent } from 'react'
-import { menuItems } from '../data/site-data'
-import { hasSubItems } from '../types/MenuItem'
+import MenuItem, { hasSubItems } from '../types/MenuItem'
 import { ReactComponent as GithubLogo } from '../svgs/github-logo.svg'
 import { ReactComponent as LinkedinLogo } from '../svgs/linkedin-logo.svg'
 import socials from '../data/socials'
+import { ucfirst } from '../utils/strings'
 
 function Header() {
   return (
@@ -22,19 +22,55 @@ function Header() {
 
 function Menu() {
   const { t } = useTranslation()
+  const menuItems: MenuItem[] = [
+    {
+      url: '/cv',
+      name: t('resume'),
+      subItems: [
+        {
+          name: t('in_french'),
+          url: '/cv-french',
+        },
+        {
+          name: t('in_english'),
+          url: '/cv-english',
+        },
+      ],
+    },
+    {
+      name: t('all_projects'),
+      url: '/projects',
+    },
+    {
+      name: t('bio'),
+      url: '/bio',
+    },
+    {
+      name: t('contact'),
+      url: '/contact',
+    },
+  ]
 
   return (
-    <nav className="flex gap-6">
+    <nav className="flex gap-8">
       {menuItems.map((item, index) => {
         if (hasSubItems(item)) {
           return (
-            <a key={index} href={item.url} className="items-center font-semibold">
-              {t(item.name)}
+            <a
+              key={index}
+              href={item.url}
+              className="items-center font-semibold capitalize hover-color"
+            >
+              {ucfirst(t(item.name))}
             </a>
           )
         }
         return (
-          <a key={index} href={item.url} className="items-center font-semibold">
+          <a
+            key={index}
+            href={item.url}
+            className="items-center font-semibold hover-color"
+          >
             {t(item.name)}
           </a>
         )

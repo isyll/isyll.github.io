@@ -4,7 +4,11 @@
   "in_french": "En français",
   "in_english": "En anglais",
   "resume": "Curriculum Vitæ",
-  "all_projects": "Tous les projets",
+  "all_projects": "Tous mes projets",
   "bio": "Bio",
-  "contact": "Contact"
+  "contact": "Contact",
+  "full_stack": "Développeur full stack",
+  "web_dev": "Développeur web",
+  "flutter_engineer": "Flutter engineer",
+  "love_programming": "Amoureux de la programmation et de la technologie"
 }
