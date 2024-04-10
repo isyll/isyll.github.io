@@ -11,6 +11,7 @@ import {
   HoverCardTrigger,
 } from '../components/ui/hover-card'
 import { ChevronDown, FileText } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -34,11 +35,11 @@ function Menu() {
       subItems: [
         {
           name: t('in_french'),
-          url: '/cv-french',
+          url: '/cv?version=french',
         },
         {
           name: t('in_english'),
-          url: '/cv-english',
+          url: '/cv?version=english',
         },
       ],
     },
@@ -51,6 +52,10 @@ function Menu() {
       url: '/bio',
     },
     {
+      name: t('blog'),
+      url: '/blog',
+    },
+    {
       name: t('contact'),
       url: '/contact',
     },
@@ -61,21 +66,16 @@ function Menu() {
       {menuItems.map((item, index) => {
         if (hasSubItems(item)) {
           return (
-            <HoverCard openDelay={0} closeDelay={0}>
-              <HoverCardTrigger>
-                <a
-                  href={item.url}
-                  className="flex items-center font-semibold hover-color"
-                >
-                  {item.name}
-                  <ChevronDown />
-                </a>
+            <HoverCard key={index} openDelay={0} closeDelay={0}>
+              <HoverCardTrigger className="cursor-pointer flex items-center font-semibold hover-color">
+                {item.name}
+                <ChevronDown />
               </HoverCardTrigger>
               <HoverCardContent className="w-50 border-none shadow-sm">
-                {item.subItems?.map((sub) => (
-                  <div className="flex gap-2 hover-color pb-3">
+                {item.subItems?.map((sub, index) => (
+                  <div key={index} className="flex gap-2 hover-color pb-3">
                     <FileText size={20} />
-                    <a href={sub.url}>{sub.name}</a>
+                    <Link to={sub.url}>{sub.name}</Link>
                   </div>
                 ))}
               </HoverCardContent>
@@ -83,13 +83,13 @@ function Menu() {
           )
         }
         return (
-          <a
+          <Link
+            to={item.url}
             key={index}
-            href={item.url}
             className="items-center font-semibold hover-color"
           >
             {t(item.name)}
-          </a>
+          </Link>
         )
       })}
     </nav>
