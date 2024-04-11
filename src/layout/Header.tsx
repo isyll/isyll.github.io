@@ -99,7 +99,7 @@ function Header() {
           <LinkedinLogo className="fill-white h-6 opacity-60" />
         </a>
       </div>
-      <select onChange={onChangeLanguage}>
+      <select onChange={onChangeLanguage} value={localStorage.getItem('lng')!}>
         {availableLanguages.map((item, index) => (
           <option key={index} value={item.code}>
             {t(item.name)}
