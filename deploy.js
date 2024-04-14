@@ -1,7 +1,8 @@
 import { publish } from 'gh-pages'
 
+console.log(' Deploying...\n');
 publish('dist', (err) =>
   err
-    ? console.error('An error was encountered ' + err)
-    : console.log('\n Deployed successfully\n'),
+    ? console.error('An error was encountered\n\n' + err)
+    : console.log(' Deployed successfully\n'),
 )
