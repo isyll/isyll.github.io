@@ -21,13 +21,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { cn } from '@/lib/utils'
 
-function Header() {
+function Header({ currentRoute }: { currentRoute?: string }) {
   const [t, i18n] = useTranslation()
   const menuItems: MenuItem[] = [
     {
+      url: '/',
+      name: 'home',
+    },
+    {
       url: '/cv',
-      name: t('resume'),
+      name: 'resume',
       subItems: [
         {
           name: t('in_french'),
@@ -40,19 +45,19 @@ function Header() {
       ],
     },
     {
-      name: t('all_projects'),
+      name: 'all_projects',
       url: '/projects',
     },
     {
-      name: t('bio'),
+      name: 'bio',
       url: '/bio',
     },
     {
-      name: t('blog'),
+      name: 'blog',
       url: '/blog',
     },
     {
-      name: t('contact'),
+      name: 'contact',
       url: '/contact',
     },
   ]
@@ -68,8 +73,13 @@ function Header() {
           if (hasSubItems(item)) {
             return (
               <HoverCard key={index} openDelay={0} closeDelay={0}>
-                <HoverCardTrigger className="cursor-pointer flex items-center font-semibold hover-color">
-                  {item.name}
+                <HoverCardTrigger
+                  className={cn(
+                    'cursor-pointer flex items-center font-semibold hover-color',
+                    currentRoute === item.name ? 'text-green' : '',
+                  )}
+                >
+                  {t(item.name)}
                   <ChevronDown />
                 </HoverCardTrigger>
                 <HoverCardContent className="w-50 border-none shadow-sm">
@@ -87,7 +97,10 @@ function Header() {
             <Link
               to={item.url}
               key={index}
-              className="items-center font-semibold hover-color"
+              className={cn(
+                'items-center font-semibold hover-color',
+                currentRoute === item.name ? 'text-green' : '',
+              )}
             >
               {t(item.name)}
             </Link>
