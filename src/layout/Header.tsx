@@ -2,7 +2,6 @@
 
 import { useTranslation } from 'react-i18next'
 import { availableLanguages } from '../i18n'
-import { ChangeEvent } from 'react'
 import MenuItem, { hasSubItems } from '@/types/MenuItem'
 import GithubLogo from '@/assets/github-logo.svg?react'
 import LinkedinLogo from '@/assets/linkedin-logo.svg?react'
@@ -14,6 +13,14 @@ import {
 } from '@/components/ui/hover-card'
 import { ChevronDown, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 function Header() {
   const [t, i18n] = useTranslation()
@@ -49,10 +56,6 @@ function Header() {
       url: '/contact',
     },
   ]
-  const onChangeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
-    const language = e.target.value
-    i18n.changeLanguage(language)
-  }
 
   return (
     <header className="flex items-center justify-between py-5 px-11">
@@ -99,13 +102,27 @@ function Header() {
           <LinkedinLogo className="fill-white h-6 opacity-60" />
         </a>
       </div>
-      <select onChange={onChangeLanguage} value={localStorage.getItem('lng')!}>
-        {availableLanguages.map((item, index) => (
-          <option key={index} value={item.code}>
-            {t(item.name)}
-          </option>
-        ))}
-      </select>
+      <Select
+        onValueChange={i18n.changeLanguage}
+        value={localStorage.getItem('lng')!}
+      >
+        <SelectTrigger className="w-[100px]">
+          <SelectValue placeholder={t('lang')} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {availableLanguages.map((item, index) => (
+              <SelectItem
+                key={index}
+                value={item.code}
+                className="cursor-pointer"
+              >
+                {t(item.name)}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
     </header>
   )
 }

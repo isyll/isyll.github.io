@@ -1,10 +1,11 @@
 {
   "french": "French",
   "english": "English",
+  "lang": "Language",
   "in_french": "French version",
   "in_english": "English version",
   "resume": "Resume",
-  "all_projects": "All my projects",
+  "all_projects": "My projects",
   "Bio": "Bio",
   "contact": "Contact",
   "full_stack": "Full stack developer",

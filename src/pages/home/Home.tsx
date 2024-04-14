@@ -1,5 +1,5 @@
-import Header from '../../layout/Header'
-import Hero from '../../layout/Hero'
+import Header from '@/layout/Header'
+import Hero from '@/layout/Hero'
 
 function Home() {
   return (

@@ -3,26 +3,49 @@
 @tailwind utilities;
 
 * {
-  color: #3c3c43;
+  color: theme('colors.onPrimary.light');
 }
 
-body,
-select {
-  background-color: #ffffff;
-  font-family: 'Chinese Quotes', 'Inter var', 'Inter', ui-sans-serif, system-ui,
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Helvetica, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+body {
+  background-color: theme('colors.primary.light');
+  color: theme('colors.onPrimary.light');
+}
+
+body {
+  background-color: theme('colors.primary.light');
+  font-family:
+    'Chinese Quotes',
+    'Inter var',
+    'Inter',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
 }
 
 .text-linear-gradient {
-  background: linear-gradient(45deg, rgb(134, 185, 26) 30%, rgb(237, 213, 50));
+  background: linear-gradient(
+    45deg,
+    theme('colors.green'),
+    theme('colors.yellow')
+  );
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-linear-gradient(
     120deg,
-    rgb(134, 185, 26) 30%,
-    rgb(237, 213, 50)
+    theme('colors.green'),
+    theme('colors.yellow')
   );
   -webkit-text-fill-color: transparent;
 }
@@ -30,8 +53,9 @@ select {
 .linear-bg {
   background-image: linear-gradient(
     -45deg,
-    rgba(134, 185, 26, 0.376) 30%,
-    rgba(237, 213, 50, 0.376)
+
+    theme('colors.greenOpaque'),
+    theme('colors.yellowOpaque')
   );
   filter: blur(72px);
   height: 460px;
@@ -43,20 +67,20 @@ select {
 }
 
 .hover-color:hover {
-  color: #88ba1b;
+  color: theme('colors.green');
 }
 
 .hover-color:hover * {
-  color: #88ba1b;
+  color: theme('colors.green');
 }
 
 @media (prefers-color-scheme: dark) {
   * {
-    color: #dfdfd6;
+    color: theme('colors.onPrimary.dark');
   }
 
-  body,
-  select {
-    background-color: #1b1b1f;
+  body {
+    background-color: theme('colors.primary.dark');
+    color: theme('colors.onPrimary.dark');
   }
 }

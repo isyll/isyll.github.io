@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config = {
-  darkMode: ['class'],
+  darkMode: 'media',
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -43,12 +43,14 @@ const config = {
           dark: '#1b1b1f',
           light: '#ffffff',
         },
-        onPrimay: {
+        onPrimary: {
           dark: '#dfdfd6',
           light: '#3c3c43',
         },
-        secondary: 'rgb(134, 185, 26) 30%',
-        tertiary: 'rgb(237, 213, 50))',
+        green: '#88ba1b',
+        yellow: 'rgb(237, 213, 50)',
+        greenOpaque: 'rgba(134, 185, 26, 0.376) 30%',
+        yellowOpaque: 'rgba(237, 213, 50, 0.376)',
       },
     },
   },
