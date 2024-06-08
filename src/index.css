@@ -73,7 +73,7 @@ body {
 .hover-color:hover * {
   color: theme('colors.green');
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   * {
     color: theme('colors.onPrimary.dark');
@@ -84,3 +84,4 @@ body {
     color: theme('colors.onPrimary.dark');
   }
 }
+*/
