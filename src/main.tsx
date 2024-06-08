@@ -13,12 +13,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/bio" element={<Bio />} />
-        <Route path="/cv" element={<Cv />} />
-        <Route path="/projects" element={<MyProjects />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/bio' element={<Bio />} />
+        <Route path='/cv' element={<Cv />} />
+        <Route path='/projects' element={<MyProjects />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>,

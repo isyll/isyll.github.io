@@ -64,18 +64,18 @@ function Header({ currentRoute }: { currentRoute?: string }) {
 
   return (
     <>
-      <header className="flex items-center justify-between py-5 px-11">
-        <div className="lg:hidden cursor-pointer">
-          <div className="flex items-center">
+      <header className='flex items-center justify-between py-5 px-11'>
+        <div className='lg:hidden cursor-pointer'>
+          <div className='flex items-center'>
             <Menu />
           </div>
         </div>
-        <h1 className="text-3xl font-bold">
-          <a href="/">Porfolio</a>
+        <h1 className='text-3xl font-bold'>
+          <a href='/'>Porfolio</a>
         </h1>
 
-        <nav className="flex justify-between items-center gap-8 relative">
-          <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+        <nav className='flex justify-between items-center gap-8 relative'>
+          <ul className='hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6'>
             {menuItems.map((item, index) => {
               if (!hasSubItems(item)) {
                 return (
@@ -103,9 +103,9 @@ function Header({ currentRoute }: { currentRoute?: string }) {
                     {t(item.name)}
                     <ChevronDown />
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-50 border-none shadow-sm">
+                  <HoverCardContent className='w-50 border-none shadow-sm'>
                     {item.subItems?.map((sub, index) => (
-                      <div key={index} className="flex gap-2 hover-color pb-3">
+                      <div key={index} className='flex gap-2 hover-color pb-3'>
                         <FileText size={20} />
                         <Link to={sub.url}>{sub.name}</Link>
                       </div>
@@ -116,19 +116,19 @@ function Header({ currentRoute }: { currentRoute?: string }) {
             })}
           </ul>
         </nav>
-        <div className="flex self-center gap-8">
-          <a href={socials.github} target="__blank">
-            <GithubLogo className="fill-white h-6 opacity-60" />
+        <div className='flex self-center gap-8'>
+          <a href={socials.github} target='__blank'>
+            <GithubLogo className='fill-white h-6 opacity-60' />
           </a>
-          <a href={socials.linkedin} target="__blank">
-            <LinkedinLogo className="fill-white h-6 opacity-60" />
+          <a href={socials.linkedin} target='__blank'>
+            <LinkedinLogo className='fill-white h-6 opacity-60' />
           </a>
         </div>
         <Select
           onValueChange={i18n.changeLanguage}
           value={localStorage.getItem('lng')!}
         >
-          <SelectTrigger className="w-[100px]">
+          <SelectTrigger className='w-[100px]'>
             <SelectValue placeholder={t('lang')} />
           </SelectTrigger>
           <SelectContent>
@@ -137,7 +137,7 @@ function Header({ currentRoute }: { currentRoute?: string }) {
                 <SelectItem
                   key={index}
                   value={item.code}
-                  className="cursor-pointer"
+                  className='cursor-pointer'
                 >
                   {t(item.name)}
                 </SelectItem>
