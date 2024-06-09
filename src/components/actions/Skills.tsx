@@ -6,7 +6,7 @@ function MySkills({ className }: { className?: string }) {
 
   return (
     <div className={`${className}`}>
-      <h1 className='font-bold text-xl pb-10'>{t('skills')}</h1>
+      {/* <h1 className='font-bold text-xl pb-10'>{t('skills')}</h1> */}
       <div className='flex'>
         <div className='bg-secondary-light dark:bgsecondary-dark p-6 w-72'>
           <NextLogo width={42} height={42} className='mb-3' />

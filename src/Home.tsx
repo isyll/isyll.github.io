@@ -8,7 +8,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <ActionSwitcher className='m-10 mt-32' />
+        <ActionSwitcher className='m-10 mx-24' />
       </main>
     </>
   )
