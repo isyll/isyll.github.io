@@ -13,5 +13,7 @@
   "web_dev": "Développeur web",
   "flutter_engineer": "Flutter engineer",
   "love_programming": "Amoureux de la programmation et de la technologie",
-  "blog": "Blog"
+  "blog": "Blog",
+  "skills": "Mes skills",
+  "nextjs": "Je suis compétent en Next.js, un framework React largement utilisé par certaines des plus grandes entreprises mondiales. Avec Next.js, je suis en mesure de créer des applications web de haute qualité, en tirant parti de la puissance des composants React."
 }

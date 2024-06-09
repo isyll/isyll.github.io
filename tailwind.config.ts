@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config = {
-  darkMode: 'selector',
+  darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -48,6 +48,14 @@ const config = {
           dark: '#dfdfd6',
           light: '#dfdfd6',
           // light: '#3c3c43',
+        },
+        secondary: {
+          dark: 'rgb(32, 33, 39)',
+          light: 'rgb(32, 33, 39)',
+        },
+        onSecondary: {
+          dark: 'rgba(235, 235, 245, 0.6)',
+          light: 'rgba(235, 235, 245, 0.6)',
         },
         green: '#88ba1b',
         yellow: 'rgb(237, 213, 50)',

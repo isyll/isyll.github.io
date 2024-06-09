@@ -58,8 +58,8 @@ body {
     theme('colors.yellowOpaque')
   );
   filter: blur(72px);
-  height: 460px;
-  width: 400px;
+  height: 400px;
+  width: 320px;
 }
 
 .hover-color {

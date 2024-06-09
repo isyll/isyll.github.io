@@ -1,5 +1,5 @@
 function Bio() {
-  return <div></div>
+  return <></>
 }
 
 export default Bio
