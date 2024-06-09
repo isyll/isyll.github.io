@@ -36,11 +36,13 @@ function ActionSwitcher({ className }: { className?: string }) {
 
   return (
     <div className={`${className}`}>
-      <div className='flex gap-4'>
-        {actions.map((element) => {
+      <div className='flex gap-4 flex-wrap'>
+        {actions.map((element, index) => {
           const title = t(element.name)
+
           return (
             <button
+              key={index}
               onClick={() => setAction(element.name)}
               className={`font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
                 action == element.name &&

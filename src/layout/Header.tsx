@@ -23,7 +23,7 @@ function Header() {
         <a href='/'>Porfolio</a>
       </h1>
       <div className='flex gap-16'>
-        <div className='flex self-center gap-8'>
+        <div className='flex self-center gap-8 ms-12'>
           <a href={socials.github} target='__blank'>
             <GithubLogo className='fill-white h-6 opacity-60' />
           </a>

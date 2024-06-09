@@ -30,9 +30,12 @@ function MySkills({ className }: { className?: string }) {
   return (
     <div className={`${className}`}>
       {/* <h1 className='font-bold text-xl pb-10'>{t('skills')}</h1> */}
-      <div className='flex gap-5 md:gap-10'>
-        {skills.map((skill) => (
-          <div className='bg-secondary-light dark:bgsecondary-dark p-6 w-72 rounded-md cursor-pointer hover:bg-light hover:scale-105 transition-all duration-200'>
+      <div className='flex flex-wrap md:flex-row gap-5 md:gap-10 flex-col'>
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className='bg-secondary-light dark:bgsecondary-dark p-6 w-72 rounded-md cursor-pointer hover:bg-light hover:scale-105 transition-all duration-200 items-center'
+          >
             <a href={skill.link}>
               {skill.img}
               <h3 className='font-bold mb-3'>{skill.title}</h3>

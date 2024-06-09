@@ -6,12 +6,14 @@ function Hero() {
   return (
     <div className='flex flex-col md:flex-row justify-center items-center md:gap-14'>
       <section className='py-24 flex items-center justify-center ps-8'>
-        <div className='flex flex-col gap-3 text-start'>
+        <div className='flex flex-col justify-center gap-3 md:text-start'>
           <h1 className='bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent font-bold text-5xl'>
             Ibrahima Sylla
           </h1>
-          <p className='text-5xl font-bold'>{t('full_stack')}</p>
-          <p className='text-5xl font-bold'>{t('flutter_engineer')}</p>
+          <p className='md:text-5xl text-4xl font-bold'>{t('full_stack')}</p>
+          <p className='md:text-5xl text-4xl font-bold'>
+            {t('flutter_engineer')}
+          </p>
           <p className='text-xl font-semibold text-[#98989f]'>
             {t('love_programming')}
           </p>
