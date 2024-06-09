@@ -42,7 +42,7 @@ function ActionSwitcher({ className }: { className?: string }) {
           return (
             <button
               onClick={() => setAction(element.name)}
-              className={`font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 ${
+              className={`font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
                 action == element.name &&
                 'bg-lightGreen text-primary-light dark:text-primary-dark'
               }`}
@@ -52,7 +52,7 @@ function ActionSwitcher({ className }: { className?: string }) {
           )
         })}
       </div>
-      <div className='mt-12'>
+      <div className='mt-20'>
         {actions.find((item) => item.name == action)!.element}
       </div>
     </div>

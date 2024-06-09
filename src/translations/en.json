@@ -15,5 +15,7 @@
   "love_programming": "Lover of programming and technology",
   "blog": "Blog",
   "skills": "Mes skills",
-  "nextjs": "My proficiency in Next.js stems from its widespread adoption by some of the world's largest companies. With Next.js, I can craft high-quality web applications, leveraging the power of React components."
+  "nextjs": "Next.js is a React framework widely used by some of the world's largest companies. With Next.js, I am able to create high-quality web applications, leveraging the power of React components.",
+  "spring": "Spring Boot is a Java framework widely used by some of the world's largest companies. With Spring Boot, I am able to create high-quality web applications, leveraging the power of Java components.",
+  "flutter": "Flutter is an open-source UI framework widely used by some of the world's largest companies. With Flutter, I am able to create high-quality mobile applications, leveraging the power of Flutter widgets."
 }

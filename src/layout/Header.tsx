@@ -18,11 +18,11 @@ function Header() {
   const [t, i18n] = useTranslation()
 
   return (
-    <>
-      <header className='flex items-center justify-between py-5 px-11'>
-        <h1 className='text-3xl font-bold'>
-          <a href='/'>Porfolio</a>
-        </h1>
+    <header className='flex items-center justify-between py-5 px-11'>
+      <h1 className='text-3xl font-bold'>
+        <a href='/'>Porfolio</a>
+      </h1>
+      <div className='flex gap-16'>
         <div className='flex self-center gap-8'>
           <a href={socials.github} target='__blank'>
             <GithubLogo className='fill-white h-6 opacity-60' />
@@ -52,8 +52,8 @@ function Header() {
             </SelectGroup>
           </SelectContent>
         </Select>
-      </header>
-    </>
+      </div>
+    </header>
   )
 }
 
