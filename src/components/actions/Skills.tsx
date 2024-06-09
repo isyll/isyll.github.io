@@ -11,13 +11,13 @@ function MySkills({ className }: { className?: string }) {
       title: 'Next.js',
       text: t('nextjs'),
       img: <NextLogo width={42} height={42} className='mb-3' />,
-      link: 'https://spring.io/',
+      link: 'https://nextjs.org/',
     },
     {
       title: 'Spring boot',
       text: t('spring'),
       img: <SpringLogo width={42} height={42} className='mb-3' />,
-      link: 'https://nextjs.org/',
+      link: 'https://spring.io/',
     },
     {
       title: 'Flutter',
