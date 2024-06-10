@@ -7,7 +7,7 @@ function Hero() {
     <div className='flex flex-col md:flex-row justify-center items-center md:gap-14'>
       <section className='py-24 flex items-center justify-center ps-8'>
         <div className='flex flex-col justify-center gap-3 md:text-start'>
-          <h1 className='bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent font-bold text-5xl'>
+          <h1 className='bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent font-bold text-6xl'>
             Ibrahima Sylla
           </h1>
           <p className='md:text-5xl text-4xl font-bold'>{t('full_stack')}</p>

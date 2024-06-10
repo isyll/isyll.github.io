@@ -17,5 +17,7 @@
   "skills": "Mes skills",
   "nextjs": "Next.js is a React framework widely used by some of the world's largest companies. With Next.js, I am able to create high-quality web applications, leveraging the power of React components.",
   "spring": "Spring Boot is a Java framework widely used by some of the world's largest companies. With Spring Boot, I am able to create high-quality web applications, leveraging the power of Java components.",
-  "flutter": "Flutter is an open-source UI framework widely used by some of the world's largest companies. With Flutter, I am able to create high-quality mobile applications, leveraging the power of Flutter widgets."
+  "flutter": "Flutter is an open-source UI framework widely used by some of the world's largest companies. With Flutter, I am able to create high-quality mobile applications, leveraging the power of Flutter widgets.",
+  "my_bio": "Web & mobile developer specialized in Spring Boot, Flutter, Nextjs, Angular, Symfony, and Laravel. Graduated from Sonatel Academy and IPD Thomas Sankara. Passionate about problem-solving, algorithms, and technological innovation.",
+  "goto_github": "You can find all my projects in my GitHub page."
 }

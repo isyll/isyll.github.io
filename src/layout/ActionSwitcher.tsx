@@ -1,9 +1,9 @@
 import Bio from '@/components/actions/Bio'
+import Contact from '@/components/actions/Contact'
 import Projects from '@/components/actions/Projects'
 import Resume from '@/components/actions/Resume'
 import MySkills from '@/components/actions/Skills'
 import MenuItem from '@/types/MenuItem'
-import { Contact } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -44,9 +44,10 @@ function ActionSwitcher({ className }: { className?: string }) {
             <button
               key={index}
               onClick={() => setAction(element.name)}
-              className={`hover:bg-lightest font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
-                action == element.name &&
-                'bg-lightGreen text-primary-light dark:text-primary-dark'
+              className={`font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
+                action == element.name
+                  ? 'bg-lightGreen text-primary-light dark:text-primary-dark'
+                  : 'hover:bg-lightest'
               }`}
             >
               {title}
