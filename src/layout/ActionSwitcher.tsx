@@ -44,7 +44,7 @@ function ActionSwitcher({ className }: { className?: string }) {
             <button
               key={index}
               onClick={() => setAction(element.name)}
-              className={`font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
+              className={`hover:bg-lightest font-medium bg-light rounded-3xl p-3 px-4 transition-all duration-200 text-nowrap ${
                 action == element.name &&
                 'bg-lightGreen text-primary-light dark:text-primary-dark'
               }`}

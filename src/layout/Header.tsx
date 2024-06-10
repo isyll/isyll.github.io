@@ -22,8 +22,8 @@ function Header() {
       <h1 className='text-3xl font-bold'>
         <a href='/'>Porfolio</a>
       </h1>
-      <div className='flex gap-16'>
-        <div className='flex self-center gap-8 ms-12'>
+      <div className='flex md:gap-16 gap-5'>
+        <div className='flex self-center gap-8 md:ms-12 ms-6'>
           <a href={socials.github} target='__blank'>
             <GithubLogo className='fill-white h-6 opacity-60' />
           </a>

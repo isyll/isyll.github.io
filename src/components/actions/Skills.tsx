@@ -4,7 +4,7 @@ import SpringLogo from '@/assets/springio.svg?react'
 import FlutterLogo from '@/assets/flutter.svg?react'
 import Skill from '@/types/Skill'
 
-function MySkills({ className }: { className?: string }) {
+function MySkills() {
   const { t } = useTranslation()
   const skills: Skill[] = [
     {
@@ -28,24 +28,21 @@ function MySkills({ className }: { className?: string }) {
   ]
 
   return (
-    <div className={`${className}`}>
-      {/* <h1 className='font-bold text-xl pb-10'>{t('skills')}</h1> */}
-      <div className='flex flex-wrap md:flex-row gap-5 md:gap-10 flex-col'>
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className='bg-secondary-light dark:bgsecondary-dark p-6 w-72 rounded-md cursor-pointer hover:bg-light hover:scale-105 transition-all duration-200 items-center'
-          >
-            <a href={skill.link}>
-              {skill.img}
-              <h3 className='font-bold mb-3'>{skill.title}</h3>
-              <p className='text-onSecondary-light dark:text-onSecondary-dark font-medium text-sm'>
-                {skill.text}
-              </p>
-            </a>
-          </div>
-        ))}
-      </div>
+    <div className='flex flex-wrap items-center md:justify-start md:items-start md:flex-row gap-6 md:gap-8 flex-col'>
+      {skills.map((skill, index) => (
+        <div
+          key={index}
+          className='bg-secondary-light dark:bgsecondary-dark p-6 w-72 rounded-lg cursor-pointer hover:bg-light hover:scale-105 transition-all duration-200 items-center'
+        >
+          <a href={skill.link}>
+            {skill.img}
+            <h3 className='font-bold mb-3'>{skill.title}</h3>
+            <p className='text-onSecondary-light dark:text-onSecondary-dark font-medium text-sm'>
+              {skill.text}
+            </p>
+          </a>
+        </div>
+      ))}
     </div>
   )
 }

@@ -58,6 +58,7 @@ const config = {
           light: 'rgba(235, 235, 245, 0.6)',
         },
         light: 'rgb(50, 54, 63)',
+        lightest: '#414853',
         green: '#88ba1b',
         lightGreen: 'rgb(172, 210, 104)',
         yellow: 'rgb(237, 213, 50)',

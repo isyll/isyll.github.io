@@ -19,12 +19,12 @@ function Hero() {
           </p>
         </div>
       </section>
-      <section className='flex justify-center items-center relative h-[400px] w-[500px] pt-8'>
+      <section className='flex justify-center items-center relative md:h-[400px] md:w-[500px] h-[300px] w-[350px] pt-8'>
         <div className='linear-bg top-10 absolute rounded-full overflow-clip'></div>
         <img
           src='/hero.png'
           alt='Ibrahima Sylla'
-          className='overflow-clip absolute top-0 left-0 bg-none w-[450px]'
+          className='overflow-clip absolute top-0 left-0 bg-none md:w-[450px] w-[400px]'
         />
       </section>
     </div>
