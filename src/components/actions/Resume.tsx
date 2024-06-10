@@ -6,7 +6,7 @@ function Resume() {
   const versions = [
     {
       name: t('in_french'),
-      link: '/Ibrahima_sylla_CV-en.pdf',
+      link: '/Ibrahima_sylla_CV-fr.pdf',
     },
     {
       name: t('in_english'),
