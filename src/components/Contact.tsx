@@ -18,7 +18,7 @@ function Contact() {
     <div id='contact'>
       <div className='flex flex-col items-center'>
         <h1 className='text-xxl'>Contact</h1>
-        <div className='flex mt-4 gap-5'>
+        <div className='flex flex-wrap justify-center mt-4 gap-5'>
           <a href='mailto:isyll711@gmail.com' target='_blank'>
             <button className='bg-primary p-3 px-6 flex items-center gap-1 rounded-md text-xl'>
               <Mail />
@@ -37,13 +37,13 @@ function Contact() {
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             type='text'
-            className='bg-opacity-0 border rounded-2xl bg-transparent border-white border-opacity-40 p-4 px-5 w-full md:w-[500px]  focus:outline-none focus:border-opacity-100'
+            className='border rounded-xl bg-transparent border-white border-opacity-40 p-4 px-5 w-full md:w-[500px]  focus:outline-none focus:border-opacity-100'
             placeholder='Subject'
           />
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className='resize-none w-full p-4 px-5 h-[250px] md:w-[500px] bg-transparent rounded-2xl border border-white border-opacity-40 focus:outline-none focus:border-opacity-100'
+            className='resize-none w-full p-4 px-5 h-[250px] md:w-[500px] bg-transparent rounded-xl border border-white border-opacity-40 focus:outline-none focus:border-opacity-100'
             placeholder='Message'
           />
           <button
@@ -58,5 +58,5 @@ function Contact() {
     </div>
   )
 }
-// https://wa.me/1XXXXXXXXXX
+
 export default Contact

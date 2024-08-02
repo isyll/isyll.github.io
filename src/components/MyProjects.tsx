@@ -4,15 +4,15 @@ import { ExternalLink } from 'lucide-react'
 export default function MyProjects() {
   return (
     <div id='projects' className='pt-3'>
-      <div className='my-14 mx-28 justify-between items-center overflow-hidden'>
+      <div className='my-14 mx-6 md:mx-28 justify-between items-center overflow-hidden'>
         <h1 className='mb-4 text-xxl text-center'>My projects</h1>
         <div className='flex flex-wrap justify-between mt-14 px-8 pb-20 gap-6'>
           {projects.map((project, index) => (
             <div
               key={index}
               className={clsx(
-                `group flex flex-col bg-[#171717] p-5 rounded-2xl cursor-pointer transition-all duration-300 w-[300px] hover:shadow-2xl hover:shadow-[#ff6b00]`,
-                `hover:bg-[#ff6b00] hover:-translate-y-2`,
+                `group flex flex-col bg-[#171717] p-5 rounded-2xl cursor-pointer transition-all w-[300px] hover:shadow-2xl hover:shadow-[#b93df3]`,
+                `hover:bg-[#b93df3] hover:-translate-y-2`,
               )}
             >
               <div className='flex justify-between'>

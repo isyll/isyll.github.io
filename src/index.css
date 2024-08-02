@@ -76,32 +76,3 @@ body {
 .group:hover .child:not(:hover) {
   opacity: 0.5;
 }
-
-/* FloatingImage.css */
-.floating-image {
-  position: absolute;
-  width: 100px; /* Ajustez la taille selon vos besoins */
-  height: 100px; /* Ajustez la taille selon vos besoins */
-  opacity: 0.8;
-  animation-name: float;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.shd   {
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
-}

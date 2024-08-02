@@ -74,8 +74,8 @@ function Hero() {
   ])
 
   return (
-    <div className='flex justify-between px-24 items-center overflow-hidden flex-wrap'>
-      <h1 className='text-[78px] leading-none font-bold'>
+    <div className='flex justify-between px-6 md:px-24 items-center overflow-hidden flex-wrap mt-10 md:mt-0'>
+      <h1 className='md:text-[78px] text-[50px] leading-none font-bold flex flex-col gap-2'>
         <motion.div
           ref={c1Ref}
           animate={c1Controls}

@@ -65,35 +65,58 @@ export function About() {
       variants: delay(0.4),
     },
   ]
+  const images = [
+    '/logos/angular.png',
+    '/logos/java.png',
+    '/logos/laravel.png',
+    '/logos/nextjs.png',
+    '/logos/react.png',
+    '/logos/spring.png',
+    '/logos/symfony.png',
+    '/logos/tailwind.png',
+    '/logos/ts.png',
+  ]
 
   return (
-    <div className='pt-3' id='about'>
-      <div className='my-32 mx-28 flex justify-between items-center overflow-hidden flex-wrap'>
-        <div className='w-full md:w-[500px]'>
-          <h1 className='mb-4 text-xxl'>About Me</h1>
-          {items.map((item, index) => (
-            <motion.p
-              ref={values[index].ref}
-              variants={values[index].variants}
-              animate={values[index].controls}
-              key={index}
-              className='mb-5 text-lg'
-            >
-              {item}
-            </motion.p>
+    <>
+      <div className='pt-3' id='about'>
+        <div className='my-32 md:mx-28 mx-6 flex justify-between items-center overflow-hidden flex-wrap'>
+          <div className='w-full md:w-[500px]'>
+            <h1 className='mb-4 text-xxl'>About Me</h1>
+            {items.map((item, index) => (
+              <motion.p
+                ref={values[index].ref}
+                variants={values[index].variants}
+                animate={values[index].controls}
+                key={index}
+                className='mb-5 text-lg'
+              >
+                {item}
+              </motion.p>
+            ))}
+          </div>
+          <motion.img
+            ref={refImg}
+            variants={delayImg(0.3)}
+            animate={controlsImg}
+            src='/ibou.png'
+            width={400}
+            alt=''
+            className='rounded-full border border-[#6b6b6b] border-opacity-70'
+          />
+        </div>
+      </div>
+      <div className='mb-10 md:mx-28 mx-6'>
+        <h1 className='text-xl'>My Skills</h1>
+        <div className='pt-4 flex gap-2 items-center overflow-hidden flex-wrap'>
+          {images.map((src, index) => (
+            <div key={index} className='pe-3'>
+              <img src={src} width={40} className='cursor-pointer z-30' />
+            </div>
           ))}
         </div>
-        <motion.img
-          ref={refImg}
-          variants={delayImg(0.3)}
-          animate={controlsImg}
-          src='/ibou.png'
-          width={400}
-          alt=''
-          className='rounded-full border border-[#6b6b6b] border-opacity-70'
-        />
       </div>
-    </div>
+    </>
   )
 }
 

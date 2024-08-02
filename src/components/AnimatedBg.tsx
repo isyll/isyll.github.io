@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { loadSlim } from '@tsparticles/slim'
 import { useCallback } from 'react'
-import Particles from 'react-particles'
-import { loadFull } from 'tsparticles'
+import Particles from 'react-tsparticles'
 
 function AnimatedBg() {
   const options: any = {
@@ -67,7 +67,7 @@ function AnimatedBg() {
   }
 
   const particlesInit = useCallback(async (engine: any) => {
-    await loadFull(engine)
+    await loadSlim(engine)
   }, [])
 
   return (

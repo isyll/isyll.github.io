@@ -36,7 +36,7 @@ function Header() {
         <a href='/'>
           <Logo />
         </a>
-        <div className='flex gap-16 md:gap-32 items-center'>
+        <div className='flex gap-4 md:gap-32 items-center'>
           {/* Desktop menu */}
           <nav className='group hidden md:block'>
             <ul className='list-none flex gap-10'>
@@ -63,7 +63,7 @@ function Header() {
           <a href='/ibrahima-sylla-resume.pdf'>
             <Button className='font-[600]'>CV</Button>
           </a>
-          <div className='block md:hidden'>
+          <div className='hidden'>
             <button onClick={toggleNavbar}>
               <AlignJustify />
             </button>
@@ -94,10 +94,6 @@ const navLinks = [
   {
     text: 'About me',
     href: 'about',
-  },
-  {
-    text: 'Skills',
-    href: 'skills',
   },
   {
     text: 'My projects',
