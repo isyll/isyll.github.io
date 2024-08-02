@@ -2,86 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  color: theme('colors.onPrimary.light');
+@font-face {
+  font-family: 'WF Visual Sans Text';
+  src: url('fonts/WFVisualSans-RegularText.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WF Visual Sans';
+  src: url('fonts/WFVisualSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WF Visual Sans';
+  src: url('fonts/WFVisualSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WF Visual Sans';
+  src: url('fonts/WFVisualSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WF Visual Sans Text';
+  src: url('fonts/WFVisualSans-SemiBoldText.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Reduced';
+  src: url('fonts/Inter-SemiBold-Reduced.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Reduced';
+  src: url('fonts/Inter-Regular-Reduced.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  background-color: theme('colors.primary.light');
-  color: theme('colors.onPrimary.light');
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'WF Visual Sans', Arial, sans-serif;
+  color: white;
 }
 
-body {
-  background-color: theme('colors.primary.light');
-  font-family:
-    'Chinese Quotes',
-    'Inter var',
-    'Inter',
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Helvetica,
-    Arial,
-    'Noto Sans',
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
+#root {
+  max-width: 1280px;
+  height: 100%;
+  width: 100%;
 }
 
-.text-linear-gradient {
-  background: linear-gradient(
-    45deg,
-    theme('colors.green'),
-    theme('colors.yellow')
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: -webkit-linear-gradient(
-    120deg,
-    theme('colors.green'),
-    theme('colors.yellow')
-  );
-  -webkit-text-fill-color: transparent;
+.group:hover .child:not(:hover) {
+  opacity: 0.5;
 }
 
-.linear-bg {
-  background-image: linear-gradient(
-    -45deg,
-
-    theme('colors.greenOpaque'),
-    theme('colors.yellowOpaque')
-  );
-  filter: blur(72px);
-  height: 400px;
-  width: 320px;
+/* FloatingImage.css */
+.floating-image {
+  position: absolute;
+  width: 100px; /* Ajustez la taille selon vos besoins */
+  height: 100px; /* Ajustez la taille selon vos besoins */
+  opacity: 0.8;
+  animation-name: float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-.hover-color {
-  transition: all 0.2s;
-}
-
-.hover-color:hover {
-  color: theme('colors.green');
-}
-
-.hover-color:hover * {
-  color: theme('colors.green');
-}
-/*
-@media (prefers-color-scheme: dark) {
-  * {
-    color: theme('colors.onPrimary.dark');
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-
-  body {
-    background-color: theme('colors.primary.dark');
-    color: theme('colors.onPrimary.dark');
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
-*/
+
+.shd   {
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+}
