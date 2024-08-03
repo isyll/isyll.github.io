@@ -110,7 +110,7 @@ function Hero() {
         variants={imgVariants}
         src='/coder-illustration.svg'
         alt='Coder illustration'
-        width={460}
+        width={450}
       />
     </div>
   )
