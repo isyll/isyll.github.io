@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 function Hero() {
-  const duration = 0.6
+  const duration = 0.8
   const imgVariants: Variants = {
       visible: {
         opacity: 1,
@@ -18,7 +18,7 @@ function Hero() {
         y: 0,
         transition: { duration: duration, ease: 'easeInOut' },
       },
-      hidden: { opacity: 0, y: 100, transition: { ease: 'easeInOut' } },
+      hidden: { opacity: 0, y: 80, transition: { ease: 'easeInOut' } },
     }
 
   const controls = useAnimation()
@@ -28,7 +28,7 @@ function Hero() {
   const c1Variants = { ...lineVariants,
     visible: {
       ...lineVariants.visible,
-      transition: { duration: duration, delay: 0.06 },
+      transition: { duration: duration, delay: 0.1 },
     }, }
   const [c1Ref, c1InView] = useInView()
   const c2Controls = useAnimation()
@@ -36,7 +36,7 @@ function Hero() {
     ...lineVariants,
     visible: {
       ...lineVariants.visible,
-      transition: { duration: duration, delay: 0.13 },
+      transition: { duration: duration, delay: 0.18 },
     },
   }
   const [c2Ref, c2InView] = useInView()
@@ -45,7 +45,7 @@ function Hero() {
     ...lineVariants,
     visible: {
       ...lineVariants.visible,
-      transition: { duration: duration, delay: 0.28 },
+      transition: { duration: duration, delay: 0.35 },
     },
   }
   const [c3Ref, c3InView] = useInView()
@@ -75,7 +75,7 @@ function Hero() {
 
   return (
     <div className='flex justify-between px-6 md:px-24 items-center overflow-hidden flex-wrap mt-10 md:mt-0'>
-      <h1 className='md:text-[78px] text-[50px] leading-none font-bold flex flex-col gap-2'>
+      <h1 className='md:text-[70px] text-[50px] leading-none font-bold flex flex-col gap-2'>
         <motion.div
           ref={c1Ref}
           animate={c1Controls}
@@ -108,7 +108,7 @@ function Hero() {
         variants={imgVariants}
         src='/coder-illustration.svg'
         alt='Coder illustration'
-        width={460}
+        width={440}
       />
     </div>
   )

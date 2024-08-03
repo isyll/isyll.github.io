@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { loadSlim } from '@tsparticles/slim'
+// import { loadSlim } from '@tsparticles/slim'
 import { useCallback } from 'react'
 import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
 
 function AnimatedBg() {
   const options: any = {
@@ -67,25 +68,13 @@ function AnimatedBg() {
   }
 
   const particlesInit = useCallback(async (engine: any) => {
-    await loadSlim(engine)
+    await loadFull(engine)
   }, [])
 
   return (
     <div className='fixed inset-0 z-[-9999]'>
       <div className='w-full h-full flex justify-center items-center'>
         <Particles options={options} init={particlesInit} />
-        {/* {images.map((image, index) => (
-          <div className='x'>
-            <img
-              className='y'
-              width={20}
-              height={20}
-              key={index}
-              src={image}
-              alt=''
-            />
-          </div>
-        ))} */}
       </div>
     </div>
   )
