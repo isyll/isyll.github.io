@@ -77,7 +77,7 @@ function Hero() {
 
   return (
     <div className='flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-24 overflow-hidden mt-10 md:mt-0'>
-      <h1 className='md:text-[78px] text-[52px] leading-none font-bold flex flex-col gap-2'>
+      <h1 className='md:text-[74px] text-[52px] leading-none font-bold flex flex-col gap-2'>
         <motion.div
           ref={c1Ref}
           animate={c1Controls}
@@ -110,7 +110,7 @@ function Hero() {
         variants={imgVariants}
         src='/coder-illustration.svg'
         alt='Coder illustration'
-        width={460}
+        width={455}
       />
     </div>
   )
