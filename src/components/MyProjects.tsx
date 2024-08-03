@@ -4,9 +4,9 @@ import { ExternalLink } from 'lucide-react'
 export default function MyProjects() {
   return (
     <div id='projects' className='pt-3'>
-      <div className='my-14 mx-6 md:mx-28 justify-between items-center overflow-hidden'>
+      <div className='my-14 mx-6 md:mx-28 justify-center md:justify-between items-center overflow-hidden'>
         <h1 className='mb-4 text-xxl text-center'>My projects</h1>
-        <div className='flex flex-wrap justify-between mt-14 px-8 pb-20 gap-6'>
+        <div className='flex flex-wrap justify-center md:justify-between mt-14 px-8 pb-20 gap-6'>
           {projects.map((project, index) => (
             <div
               key={index}

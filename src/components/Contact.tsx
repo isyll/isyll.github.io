@@ -32,7 +32,7 @@ function Contact() {
             </button>
           </a>
         </div>
-        <div className='flex flex-col gap-6 justify-center items-center mt-10'>
+        <div className='flex flex-col gap-6 justify-center items-center mt-10 w-full px-20'>
           <input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}

@@ -25,11 +25,13 @@ function Hero() {
   const [ref, inView] = useInView()
 
   const c1Controls = useAnimation()
-  const c1Variants = { ...lineVariants,
+  const c1Variants = {
+    ...lineVariants,
     visible: {
       ...lineVariants.visible,
       transition: { duration: duration, delay: 0.1 },
-    }, }
+    },
+  }
   const [c1Ref, c1InView] = useInView()
   const c2Controls = useAnimation()
   const c2Variants = {
@@ -74,8 +76,8 @@ function Hero() {
   ])
 
   return (
-    <div className='flex justify-between px-6 md:px-24 items-center overflow-hidden flex-wrap mt-10 md:mt-0'>
-      <h1 className='md:text-[70px] text-[50px] leading-none font-bold flex flex-col gap-2'>
+    <div className='flex justify-center md:justify-between px-6 md:px-24 items-center overflow-hidden flex-wrap mt-10 md:mt-0'>
+      <h1 className='md:text-[78px] text-[52px] leading-none font-bold flex flex-col gap-2'>
         <motion.div
           ref={c1Ref}
           animate={c1Controls}

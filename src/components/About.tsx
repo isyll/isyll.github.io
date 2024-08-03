@@ -80,7 +80,7 @@ export function About() {
   return (
     <>
       <div className='pt-3' id='about'>
-        <div className='my-32 md:mx-28 mx-6 flex justify-between items-center overflow-hidden flex-wrap'>
+        <div className='my-32 md:mx-28 mx-6 flex justify-center md:justify-between items-center overflow-hidden flex-wrap'>
           <div className='w-full md:w-[500px]'>
             <h1 className='mb-4 text-xxl'>About Me</h1>
             {items.map((item, index) => (
@@ -108,9 +108,9 @@ export function About() {
       </div>
       <div className='mb-10 md:mx-28 mx-6'>
         <h1 className='text-xl'>My Skills</h1>
-        <div className='pt-4 flex gap-2 items-center overflow-hidden flex-wrap'>
+        <div className='pt-4 flex gap-2 items-center overflow-hidden flex-wrap py-4'>
           {images.map((src, index) => (
-            <div key={index} className='pe-3'>
+            <div key={index} className='pe-3 hover:scale-150 transition-transform duration-300'>
               <img src={src} width={40} className='cursor-pointer z-30' />
             </div>
           ))}
