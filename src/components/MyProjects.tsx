@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import { ExternalLink } from 'lucide-react'
+import ScrollAnimation from 'react-animate-on-scroll'
+import 'animate.css/animate.compat.css'
 
 export default function MyProjects() {
   return (
@@ -8,38 +10,40 @@ export default function MyProjects() {
         <h1 className='mb-4 text-xxl text-center'>My projects</h1>
         <div className='flex flex-wrap justify-center md:justify-between mt-14 px-8 pb-20 gap-6'>
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className={clsx(
-                `group flex flex-col bg-[#171717] p-5 rounded-2xl cursor-pointer transition-all w-[300px] hover:shadow-2xl hover:shadow-[#b93df3]`,
-                `hover:bg-[#b93df3] hover:-translate-y-2`,
-              )}
-            >
-              <div className='flex justify-between'>
-                <p></p>
-                <a href={project.url} target='_blank'>
-                  <span className='group-hover:hidden'>
-                    <ExternalLink />
-                  </span>
-                  <span className='group-hover:inline hidden'>
-                    <ExternalLink color='#080808' />
-                  </span>
-                </a>
+            <ScrollAnimation key={index} animateIn='flipInX'>
+              <div
+                key={index}
+                className={clsx(
+                  `group flex flex-col bg-[#171717] p-5 rounded-2xl cursor-pointer transition-all w-[300px] hover:shadow-2xl hover:shadow-[#b93df3]`,
+                  `hover:bg-[#b93df3] hover:-translate-y-2`,
+                )}
+              >
+                <div className='flex justify-between'>
+                  <p></p>
+                  <a href={project.url} target='_blank'>
+                    <span className='group-hover:hidden'>
+                      <ExternalLink />
+                    </span>
+                    <span className='group-hover:inline hidden'>
+                      <ExternalLink color='#080808' />
+                    </span>
+                  </a>
+                </div>
+                <h1 className='text-xxl mb-2 group-hover:text-secondary font-extrabold duration-500'>
+                  {project.name}
+                </h1>
+                <p className='text-xl my-2 group-hover:text-secondary duration-500'>
+                  {project.description}
+                </p>
+                <p className='mt-6 group-hover:text-secondary duration-500 flex gap-4'>
+                  {project.techs.map((tech, index) => (
+                    <span key={index} className='opacity-50 text-sm'>
+                      {tech}
+                    </span>
+                  ))}
+                </p>
               </div>
-              <h1 className='text-xxl mb-2 group-hover:text-secondary font-extrabold duration-500'>
-                {project.name}
-              </h1>
-              <p className='text-xl my-2 group-hover:text-secondary duration-500'>
-                {project.description}
-              </p>
-              <p className='mt-6 group-hover:text-secondary duration-500 flex gap-4'>
-                {project.techs.map((tech, index) => (
-                  <span key={index} className='opacity-50 text-sm'>
-                    {tech}
-                  </span>
-                ))}
-              </p>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
@@ -63,17 +67,10 @@ const projects = [
     techs: ['Dart', 'Flutter'],
   },
   {
-    url: 'https://github.com/isyll/isy-shop',
-    name: 'IsySHOP',
-    description: 'E-commerce application.',
+    url: 'https://github.com/isyll/quizzy',
+    name: 'Quizzy',
+    description: 'Quizz application.',
     link: '',
     techs: ['Dart', 'Flutter'],
-  },
-  {
-    url: 'https://github.com/isyll/chat-online',
-    name: 'Chat Online',
-    description: 'Web version of chat application.',
-    link: '',
-    techs: ['React', 'Tailwind CSS'],
   },
 ]

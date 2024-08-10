@@ -10,7 +10,6 @@ import Skills from './components/Skills'
 function App() {
   return (
     <main id='home'>
-      <AnimatedBg />
       <Header />
       <Hero />
       <About />
@@ -19,6 +18,7 @@ function App() {
       <Contact />
       <div className='h-[200px]'></div>
       <Footer />
+      <AnimatedBg />
     </main>
   )
 }
