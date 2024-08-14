@@ -58,19 +58,16 @@
   font-display: swap;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
-  font-family: 'WF Visual Sans', Arial, sans-serif;
-  color: white;
+html {
+  scroll-behavior: smooth;
 }
 
-#root {
-  max-width: 1280px;
-  height: 100%;
-  width: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'WF Visual Sans', Arial, sans-serif;
+  color: white;
 }
 
 .group:hover .child:not(:hover) {
