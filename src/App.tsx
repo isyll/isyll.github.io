@@ -10,8 +10,8 @@ import Skills from './components/Skills'
 function App() {
   return (
     <>
-      <Header />
-      <main className='relative'>
+      <main>
+        <Header />
         <AnimatedBg />
         <div className='h-[75px]'></div>
         <Hero />
@@ -19,9 +19,9 @@ function App() {
         <Skills />
         <MyProjects />
         <Contact />
-        <div className='h-[200px]'></div>
-        <Footer />
       </main>
+      <div className='h-[200px]'></div>
+      <Footer />
     </>
   )
 }

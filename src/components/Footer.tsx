@@ -4,7 +4,7 @@ import Linkedin from '../assets/linkedin.svg'
 
 function Footer() {
   return (
-    <footer className='backdrop-blur-sm bg-opacity-40 flex flex-wrap flex-col md:flex-row gap-4 justify-between items-center border-t border-tertiary w-full pt-[40px] px-6 md:px-20'>
+    <footer className='backdrop-blur-sm bg-opacity-40 flex flex-wrap flex-col md:flex-row gap-4 justify-between items-center border-t border-tertiary w-full py-[20px] px-6 md:px-20'>
       <p className='text-dark'>
         &copy; 2024 Ibrahima Sylla. All rights reserved
       </p>

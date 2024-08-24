@@ -18,21 +18,21 @@ function Contact() {
     <div id='contact'>
       <div className='flex flex-col items-center'>
         <h1 className='text-xxl'>Contact</h1>
-        <div className='flex flex-wrap justify-center mt-4 gap-5'>
+        <div className='flex flex-wrap justify-center md:justify-center mt-4 gap-5'>
           <a href='mailto:isyll711@gmail.com' target='_blank'>
-            <button className='bg-primary p-3 px-6 flex items-center gap-1 rounded-md text-xl'>
+            <button className='bg-primary p-3 px-6 flex w-full items-center gap-1 rounded-md text-xl'>
               <Mail />
               isyll711@gmail.com
             </button>
           </a>
           <a href='https://wa.me/221785354479'>
-            <button className='bg-primary p-3 px-6 flex items-center gap-1 rounded-md text-xl'>
+            <button className='bg-primary p-3 px-6 flex w-full items-center gap-1 rounded-md text-xl'>
               <img src='/whatsapp.svg' width={24} />
               +221 78 535 44 79
             </button>
           </a>
         </div>
-        <div className='flex flex-col gap-6 justify-center items-center mt-10 w-full px-20'>
+        <div className='flex flex-col gap-6 justify-center items-center mt-10 w-full px-10 md:px-20'>
           <input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
