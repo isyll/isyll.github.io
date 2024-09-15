@@ -59,6 +59,9 @@ importers:
       react-intersection-observer:
         specifier: ^9.13.0
         version: 9.13.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-scrollspy-navigation:
+        specifier: ^2.0.6
+        version: 2.0.6
       react-tsparticles:
         specifier: ^2.12.2
         version: 2.12.2(react@18.3.1)
@@ -1473,6 +1476,9 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-scrollspy-navigation@2.0.6:
+    resolution: {integrity: sha512-BBnIEI9BsCPIMnp3z/OIEJ6mRSlDgGYf8wty5IjR8nOIhIeRhQp6eDUAKFMyHRoM2RUInA2NDu5DutIFTphoKQ==}
 
   react-tsparticles@2.12.2:
     resolution: {integrity: sha512-/nrEbyL8UROXKIMXe+f+LZN2ckvkwV2Qa+GGe/H26oEIc+wq/ybSG9REDwQiSt2OaDQGu0MwmA4BKmkL6wAWcA==}
@@ -3251,6 +3257,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   react-is@16.13.1: {}
+
+  react-scrollspy-navigation@2.0.6: {}
 
   react-tsparticles@2.12.2(react@18.3.1):
     dependencies:

@@ -10,7 +10,7 @@ function Button({
   return (
     <button
       className={clsx(
-        'bg-primary rounded-md px-6 py-3 hover:brightness-125 transition-all duration-300',
+        'border-primary hover:bg-primary border bg-transparent rounded-md px-6 py-3 hover:brightness-125 transition-all duration-300',
         className,
       )}
     >

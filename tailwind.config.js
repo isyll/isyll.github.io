@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         primary: '#146ef5',
-        secondary: '#080808',
+        secondary: '#111111',
         tertiary: 'rgb(43, 43, 43)',
-        dark: 'rgb(137, 137, 137)',
+        dark: '#080808',
       },
       fontSize: {
         xxl: '40px',

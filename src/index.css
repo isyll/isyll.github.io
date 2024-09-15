@@ -58,6 +58,11 @@
   font-display: swap;
 }
 
+::selection {
+  background-color: #146ef5;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
 }
