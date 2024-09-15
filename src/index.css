@@ -4,8 +4,12 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.header-btn {
+  @apply hover:dark:bg-primary-light hover:bg-primary-dark px-2 py-3 rounded-md;
 }
