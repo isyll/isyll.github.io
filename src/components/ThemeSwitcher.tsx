@@ -7,6 +7,7 @@ export default function ThemeSwitcher() {
 
   const toggleDarkMode = () => {
     setDark(!dark)
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
     document.documentElement.classList.toggle('dark')
   }
 

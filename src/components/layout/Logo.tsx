@@ -8,7 +8,8 @@ interface Props {
 
 export default function Logo({ className, textClass }: Props) {
   return (
-    <div
+    <a
+      href='/'
       className={clsx(
         'flex items-center gap-2 font-semibold text-lg',
         className,
@@ -16,6 +17,6 @@ export default function Logo({ className, textClass }: Props) {
     >
       <MdTerminal size={30} />
       <span className={textClass}>Isyll</span>
-    </div>
+    </a>
   )
 }
