@@ -19,16 +19,18 @@ export default function Home() {
   return (
     <div
       className={clsx(
-        'flex flex-row place-items-center h-full',
+        'flex md:flex-row flex-col items-center justify-between h-full gap-4 md:gap-20',
         classes.rootPadding,
       )}
     >
-      <div className='flex flex-col w-[60%]'>
-        <h1 className='text-[72px] font-[900]'>Ibrahima Sylla,</h1>
+      <div className='flex flex-col md:items-start items-center gap-5 text-center md:text-start'>
+        <h1 className='md:text-[72px] text-[60px] font-[900] leading-none'>
+          Ibrahima Sylla,
+        </h1>
         <p className='text-primary-light dark:text-primary-dark font-light'>
           {texts.bio}
         </p>
-        <div className='flex gap-4 mt-5'>
+        <div className='flex gap-4'>
           {socialLinks.map((social, index) => (
             <a href={social.link} title={social.name} key={index}>
               <social.icon
@@ -39,48 +41,49 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className='w-[25%]'>
-        <Carousel
-          plugins={[plugin.current]}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
-        >
-          <CarouselContent>
-            {carouselData.map((data, index) => {
-              const hasDark = data.dark !== undefined
-              const width = 100
-              const style = 'flex-col items-center gap-3'
+      <Carousel
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+        className='relative flex items-center max-w-[300px]'
+      >
+        <CarouselContent>
+          {carouselData.map((data, index) => {
+            const hasDark = data.dark !== undefined
+            const width = 100
+            const style = 'flex-col items-center gap-3'
 
-              return (
-                <CarouselItem key={index} className='flex justify-center'>
-                  <div
-                    className={clsx(
-                      style,
-                      'flex',
-                      hasDark ? 'flex dark:hidden' : '',
-                    )}
-                  >
-                    <img src={data.imgUrl} alt={data.name} width={width} />
+            return (
+              <CarouselItem key={index} className='flex justify-center'>
+                <div
+                  className={clsx(
+                    style,
+                    'flex',
+                    hasDark ? 'flex dark:hidden' : '',
+                  )}
+                >
+                  <img src={data.imgUrl} alt={data.name} width={width} />
+                  <h4>{data.name}</h4>
+                </div>
+                {hasDark && (
+                  <div className={clsx(style, 'hidden dark:flex')}>
+                    <img
+                      src={data.dark!.imgUrl}
+                      alt={data.name}
+                      width={width}
+                    />
                     <h4>{data.name}</h4>
                   </div>
-                  {hasDark && (
-                    <div className={clsx(style, 'hidden dark:flex')}>
-                      <img
-                        src={data.dark!.imgUrl}
-                        alt={data.name}
-                        width={width}
-                      />
-                      <h4>{data.name}</h4>
-                    </div>
-                  )}
-                </CarouselItem>
-              )
-            })}
-          </CarouselContent>
+                )}
+              </CarouselItem>
+            )
+          })}
+        </CarouselContent>
+        <div className='absolute w-full flex justify-between'>
           <CarouselPrevious />
           <CarouselNext />
-        </Carousel>
-      </div>
+        </div>
+      </Carousel>
     </div>
   )
 }

@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main className='grow shrink basis-[0%] border border-red-700'>
+      <main className='grow'>
         <Outlet />
       </main>
       <Footer />

@@ -13,12 +13,12 @@ export default function Header({ className }: Props) {
   return (
     <header
       className={cn(
-        'flex relative justify-center items-center transition-all md:h-[58px] text-primary-light dark:text-primary-dark lg:px-24 md:px-12 px-8 border-b-2 dark:border-primary-light border-primary-dark',
+        'flex relative justify-center items-center transition-all duration-300 md:h-[58px] text-primary-light dark:text-primary-dark lg:px-32 md:px-14 px-5 border-b-2 dark:border-primary-light border-primary-dark',
         className,
       )}
     >
       <Logo
-        className='mr-auto hover:dark:bg-primary-light hover:bg-primary-dark py-4 px-3'
+        className='mr-auto hover:dark:bg-primary-light hover:bg-primary-dark py-4 px-2'
         textClass='transition-all hidden md:inline'
       />
       <div className='absolute block md:hidden text-md'>Ibrahima Sylla</div>
