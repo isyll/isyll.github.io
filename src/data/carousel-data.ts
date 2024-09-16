@@ -19,6 +19,10 @@ const carouselData: CarouselData[] = [
     },
   },
   {
+    name: 'Angular',
+    imgUrl: '/logos/angular.png',
+  },
+  {
     name: 'HTML5',
     imgUrl: '/logos/html5.png',
   },
@@ -52,6 +56,10 @@ const carouselData: CarouselData[] = [
     dark: {
       imgUrl: '/logos/symfony_white.png',
     },
+  },
+  {
+    name: 'Sass',
+    imgUrl: '/logos/sass.png',
   },
 ]
 

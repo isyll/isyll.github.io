@@ -12,6 +12,7 @@ import clsx from 'clsx'
 import { Carousel } from '@/components/ui/carousel'
 import { useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
+import Heading1 from '@/components/ui/Heading1'
 
 export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
@@ -24,9 +25,7 @@ export default function Home() {
       )}
     >
       <div className='flex flex-col md:items-start items-center gap-5 text-center md:text-start'>
-        <h1 className='md:text-[72px] text-[60px] font-[900] leading-none'>
-          Ibrahima Sylla,
-        </h1>
+        <Heading1>Ibrahima Sylla,</Heading1>
         <p className='text-primary-light dark:text-primary-dark font-light'>
           {texts.bio}
         </p>

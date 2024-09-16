@@ -28,6 +28,10 @@ body {
   @apply flex gap-3 hover:dark:bg-primary-light hover:bg-primary-dark rounded-md px-6 py-3 transition-all duration-200;
 }
 
+.horizontal-line {
+  @apply border border-primary-dark dark:border-primary-light h-0;
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;
