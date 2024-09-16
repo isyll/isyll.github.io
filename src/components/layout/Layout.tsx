@@ -4,10 +4,12 @@ import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
   return (
-    <main>
+    <>
       <Header />
-      <Outlet />
+      <main className='grow shrink basis-[0%] border border-red-700'>
+        <Outlet />
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }

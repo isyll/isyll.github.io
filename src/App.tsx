@@ -1,12 +1,12 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from '@/pages/Home'
 import { useDarkMode } from 'usehooks-ts'
-import Layout from './components/layout/Layout'
-import Education from './pages/Education'
-import Projects from './pages/Projects'
-import Experiences from './pages/Experiences'
-import Cv from './pages/Cv'
-import Skills from './pages/Skills'
+import Layout from '@/components/layout/Layout'
+import Education from '@/pages/Education'
+import Projects from '@/pages/Projects'
+import Experiences from '@/pages/Experiences'
+import Cv from '@/pages/Cv'
+import Skills from '@/pages/Skills'
 
 export default function App() {
   const { isDarkMode } = useDarkMode()

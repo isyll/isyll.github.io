@@ -1,12 +1,22 @@
-import menuItems from '../../data/menu-items'
+import menuItems from '@/data/menu-items'
 import Logo from './Logo'
 import ThemeSwitcher from '../ThemeSwitcher'
 import Search from '../Search'
 import { HiMenuAlt4 } from 'react-icons/hi'
+import { cn } from '@/lib/utils'
 
-export default function Header() {
+interface Props {
+  className?: string
+}
+
+export default function Header({ className }: Props) {
   return (
-    <header className='flex relative justify-center items-center transition-all md:h-[58px] text-primary-light dark:text-primary-dark lg:px-24 md:px-12 px-8 border-b-2 dark:border-primary-light border-primary-dark'>
+    <header
+      className={cn(
+        'flex relative justify-center items-center transition-all md:h-[58px] text-primary-light dark:text-primary-dark lg:px-24 md:px-12 px-8 border-b-2 dark:border-primary-light border-primary-dark',
+        className,
+      )}
+    >
       <Logo
         className='mr-auto hover:dark:bg-primary-light hover:bg-primary-dark py-4 px-3'
         textClass='transition-all hidden md:inline'
