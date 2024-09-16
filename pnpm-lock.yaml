@@ -26,6 +26,9 @@ importers:
       framer-motion:
         specifier: ^11.5.4
         version: 11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      hamburger-react:
+        specifier: ^2.5.1
+        version: 2.5.1(react@18.3.1)
       lucide-react:
         specifier: ^0.441.0
         version: 0.441.0(react@18.3.1)
@@ -898,6 +901,11 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  hamburger-react@2.5.1:
+    resolution: {integrity: sha512-XlTIinYeYzLu76q4Vd9olwOJP0hFgAeZfJFX6tTT/ufTLhmOjI77CGFYIwGc6gcDeeT86660ZoKx3/L67vdZEw==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -2125,6 +2133,10 @@ snapshots:
   globals@15.9.0: {}
 
   graphemer@1.4.0: {}
+
+  hamburger-react@2.5.1(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   has-flag@4.0.0: {}
 
