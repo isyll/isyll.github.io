@@ -37,8 +37,8 @@ const socialLinks: SocialLink[] = [
   {
     name: 'Email',
     link: 'mailto:isyll711@gmail.com',
-    icon: MdOutlineAlternateEmail
-  }
+    icon: MdOutlineAlternateEmail,
+  },
 ]
 
 export default socialLinks
