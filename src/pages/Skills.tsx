@@ -32,7 +32,7 @@ export default function Skills() {
       <Heading1>Skills</Heading1>
       <input
         type='text'
-        className='transition-all duration-200 bg-transparent focus:bg-primary-dark dark:focus:bg-primary-light outline-none border border-primary-light border-opacity-10 focus:border-opacity-100 dark:border-primary-dark rounded-xl px-4 py-3 min-w-[100%]'
+        className='transition-all duration-200 bg-transparent focus:bg-primary-dark dark:focus:bg-primary-light outline-none border border-primary-light focus:border-primary-dark border-opacity-10 focus:border-opacity-100 dark:border-secondary-dark focus:dark:border-[#888] rounded-xl px-4 py-3 min-w-[100%]'
         placeholder='Search...'
         value={searchValue}
         onChange={handleSearch}
@@ -54,48 +54,34 @@ interface SkillCardProps {
 function SkillCard({ skill }: SkillCardProps) {
   return (
     <div className=''>
-      <div className='flex items-center gap-4 my-5'>
+      <div className='flex items-center gap-4 my-3'>
         <div className='horizontal-line w-6'></div>
-        <h2 className='text-primary-dark dark:text-primary-light text-lg brightness-150'>
+        <h2 className='text-secondary-dark dark:text-primary-light text-lg brightness-150'>
           {skill.category}
         </h2>
         <div className='horizontal-line grow'></div>
       </div>
-      <div className=' grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
+      <div className=' grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:gap-6 gap-0'>
         {skill.skills.map((data, index) => {
           const hasDark = data.dark !== undefined
 
+          const element = (className: string) => (
+            <motion.div
+              whileHover={{ scale: 1.02, rotate: 1.5 }}
+              className={cn(
+                'flex-row items-center gap-4 justify-start py-8 px-10 cursor-pointer',
+                className,
+              )}
+            >
+              <img src={data.imgUrl} alt={data.name} width={50} />
+              <h3>{data.name}</h3>
+            </motion.div>
+          )
+
           return (
             <div key={index}>
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 1.5 }}
-                style={{
-                  // background: `linear-gradient(to right, ${data.logoPrimaryColor}, )`,
-                  backgroundColor: data.logoPrimaryColor,
-                }}
-                className={cn(
-                  hasDark ? 'dark:hidden' : '',
-                  ` flex justify-between items-center rounded-xl py-8 px-10 cursor-pointer border border-primary-dark dark:border-primary-light`,
-                )}
-              >
-                <h3>{data.name}</h3>
-                <img src={data.imgUrl} alt={data.name} width={36} />
-              </motion.div>
-              {hasDark && (
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 1.5 }}
-                  style={{
-                    // background: `linear-gradient(to right, ${data.logoPrimaryColor}, )`,*
-                    backgroundColor: data.logoPrimaryColor,
-                  }}
-                  className={cn(
-                    ` hidden dark:flex justify-between items-center rounded-xl py-8 px-10 cursor-pointer border border-primary-dark dark:border-primary-light`,
-                  )}
-                >
-                  <h3>{data.name}</h3>
-                  <img src={data.imgUrl} alt={data.name} width={36} />
-                </motion.div>
-              )}
+              {element(cn(hasDark ? 'dark:hidden' : '', 'flex'))}
+              {hasDark && element(cn('hidden dark:flex'))}
             </div>
           )
         })}

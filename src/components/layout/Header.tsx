@@ -29,7 +29,7 @@ export default function Header({ className }: Props) {
     <>
       <header
         className={cn(
-          'z-[10] flex relative justify-center items-center transition-all md:h-[58px] bg-white dark:bg-black text-primary-light dark:text-primary-dark border-b-2 dark:border-primary-light border-primary-dark',
+          'z-[10] flex fixed top-0 left-0 w-full justify-center items-center transition-all md:h-[58px] bg-white dark:bg-black text-primary-light dark:text-primary-dark border-b-2 dark:border-primary-light border-primary-dark',
           className,
           classes.rootPadding,
         )}

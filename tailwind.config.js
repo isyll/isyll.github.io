@@ -9,6 +9,9 @@ export default {
           dark: '#e1e1e1',
           light: '#1e1e1e',
         },
+        secondary: {
+          dark: '#2e2e2e',
+        }
       },
       width: {
         half: '50%',
