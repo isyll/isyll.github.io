@@ -11,7 +11,7 @@ export default {
         },
         secondary: {
           dark: '#2e2e2e',
-        }
+        },
       },
       width: {
         half: '50%',
