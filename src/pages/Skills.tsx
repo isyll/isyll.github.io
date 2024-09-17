@@ -66,13 +66,13 @@ function SkillCard({ skill }: SkillCardProps) {
           const hasDark = data.dark !== undefined
 
           return (
-            <>
+            <div key={index}>
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, rotate: 1.5 }}
                 style={{
-                  background: `linear-gradient(to right, ${data.logoPrimaryColor}, black)`,
+                  // background: `linear-gradient(to right, ${data.logoPrimaryColor}, )`,
+                  backgroundColor: data.logoPrimaryColor,
                 }}
-                key={index}
                 className={cn(
                   hasDark ? 'dark:hidden' : '',
                   ` flex justify-between items-center rounded-xl py-8 px-10 cursor-pointer border border-primary-dark dark:border-primary-light`,
@@ -83,11 +83,11 @@ function SkillCard({ skill }: SkillCardProps) {
               </motion.div>
               {hasDark && (
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, rotate: 1.5 }}
                   style={{
-                    background: `linear-gradient(to right, ${data.logoPrimaryColor}, black)`,
+                    // background: `linear-gradient(to right, ${data.logoPrimaryColor}, )`,*
+                    backgroundColor: data.logoPrimaryColor,
                   }}
-                  key={index}
                   className={cn(
                     ` hidden dark:flex justify-between items-center rounded-xl py-8 px-10 cursor-pointer border border-primary-dark dark:border-primary-light`,
                   )}
@@ -96,7 +96,7 @@ function SkillCard({ skill }: SkillCardProps) {
                   <img src={data.imgUrl} alt={data.name} width={36} />
                 </motion.div>
               )}
-            </>
+            </div>
           )
         })}
       </div>

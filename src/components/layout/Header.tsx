@@ -7,6 +7,7 @@ import { MdOutlineDarkMode, MdOutlineSearch } from 'react-icons/md'
 import { IoSunnySharp } from 'react-icons/io5'
 import { useDarkMode } from 'usehooks-ts'
 import { Cross as Hamburger } from 'hamburger-react'
+import classes from '@/data/classes'
 
 interface Props {
   className?: string
@@ -28,8 +29,9 @@ export default function Header({ className }: Props) {
     <>
       <header
         className={cn(
-          'z-[10] flex relative justify-center items-center transition-all md:h-[58px] bg-white dark:bg-black text-primary-light dark:text-primary-dark lg:px-32 md:px-14 px-5 border-b-2 dark:border-primary-light border-primary-dark',
+          'z-[10] flex relative justify-center items-center transition-all md:h-[58px] bg-white dark:bg-black text-primary-light dark:text-primary-dark border-b-2 dark:border-primary-light border-primary-dark',
           className,
+          classes.rootPadding,
         )}
       >
         <Logo
@@ -70,14 +72,14 @@ export default function Header({ className }: Props) {
             ) : (
               <IoSunnySharp size={24} />
             )}
-          </button>{' '}
+          </button>
         </div>
       </header>
       <motion.div
         initial={{ y: '-100%' }}
         animate={{ y: isOpen ? 0 : '-100%' }}
         exit={{ y: '-100%' }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring' }}
         className='fixed md:hidden z-[5] inset-0 pt-16 bg-white dark:bg-black'
         onClick={toggleMenu}
       >

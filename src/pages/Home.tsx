@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div
       className={clsx(
-        'flex md:flex-row flex-col items-center justify-center md:justify-between h-full gap-14 md:gap-20',
+        'flex md:flex-row flex-col items-center justify-center md:justify-between h-full gap-14 md:gap-20 my-5 md:my-0',
         classes.rootPadding,
       )}
     >
