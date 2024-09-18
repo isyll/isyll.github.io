@@ -12,7 +12,7 @@ import clsx from 'clsx'
 import { Carousel } from '@/components/ui/carousel'
 import { useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
-import Heading1 from '@/components/ui/Heading1'
+import Heading1 from '@/components/custom/Heading1'
 
 export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))

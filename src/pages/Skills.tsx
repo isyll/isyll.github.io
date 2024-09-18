@@ -1,15 +1,13 @@
-import Heading1 from '@/components/ui/Heading1'
+import SearchInput from '@/components/custom/SearchInput'
+import Heading1 from '@/components/custom/Heading1'
 import classes from '@/data/classes'
 import skills, { Skill } from '@/data/skills'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { ChangeEvent, useState } from 'react'
+import useSearch from '@/hooks/useSearch'
 
 export default function Skills() {
-  const [searchValue, setSearchValue] = useState('')
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value)
-  }
+  const { searchValue, handleSearch } = useSearch('')
 
   let skillsData: Skill[] = skills
   if (searchValue.length > 0) {
@@ -23,16 +21,9 @@ export default function Skills() {
   }
 
   return (
-    <div
-      className={cn(
-        classes.rootPadding,
-        'flex flex-col gap-6 items-center py-14',
-      )}
-    >
+    <div className={cn(classes.rootPadding, classes.content)}>
       <Heading1>Skills</Heading1>
-      <input
-        type='text'
-        className='transition-all duration-200 bg-transparent focus:bg-primary-dark dark:focus:bg-primary-light outline-none border border-primary-light focus:border-primary-dark border-opacity-10 focus:border-opacity-100 dark:border-secondary-dark focus:dark:border-[#888] rounded-xl px-4 py-3 min-w-[100%]'
+      <SearchInput
         placeholder='Search...'
         value={searchValue}
         onChange={handleSearch}
