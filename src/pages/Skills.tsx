@@ -47,7 +47,7 @@ function SkillCard({ skill }: SkillCardProps) {
     <div className=''>
       <div className='flex items-center gap-4 my-3'>
         <div className='horizontal-line w-6'></div>
-        <h2 className='text-secondary-dark dark:text-primary-light text-lg brightness-150'>
+        <h2 className='text-primary-dark dark:text-primary-light text-lg brightness-90 dark:brightness-150'>
           {skill.category}
         </h2>
         <div className='horizontal-line grow'></div>

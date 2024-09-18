@@ -5,13 +5,12 @@ export interface Project {
   illustrations: string[]
   days: number
   githubUrl: string
-  postUrl?: string
-  integrationCode?: string
   startDate: string
   endDate: string
   techs: {
     name: string
     imgUrl: string
+    main?: boolean
     dark?: {
       imgUrl: string
     }
@@ -22,14 +21,10 @@ const projects: Project[] = [
   {
     name: 'Wave Clone',
     type: 'Mobile app',
-    description: 'Clone of the famous money transfer app Wave',
+    description: 'Clone of the famous money transfer app Wave.',
     illustrations: ['/images/wave-clone.png'],
     days: 43,
     githubUrl: 'https://github.com/isyll/wave',
-    postUrl:
-      'https://www.linkedin.com/posts/ibrahima-sylla-9931a61ba_voici-un-clone-de-lapplication-wave-que-activity-7234729651116339200-0fbQ?utm_source=share&utm_medium=member_desktop',
-    integrationCode:
-      '<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7234728173530198017?compact=1" height="399" width="710" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>',
     startDate: 'May 2024',
     endDate: 'August 2024',
     techs: [
@@ -39,6 +34,7 @@ const projects: Project[] = [
       },
       {
         name: 'Flutter',
+        main: true,
         imgUrl: '/logos/flutter.png',
       },
     ],
@@ -46,7 +42,7 @@ const projects: Project[] = [
   {
     name: 'My portfolio',
     type: 'Single Page App',
-    description: 'My portfolio website',
+    description: 'My portfolio website.',
     illustrations: [],
     days: 5,
     githubUrl: 'https://github.com/isyll/isyll.github.io',
@@ -55,6 +51,7 @@ const projects: Project[] = [
     techs: [
       {
         name: 'React',
+        main: true,
         imgUrl: '/logos/react.png',
       },
       {

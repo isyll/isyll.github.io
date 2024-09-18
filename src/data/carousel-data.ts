@@ -43,6 +43,10 @@ const carouselData: CarouselData[] = [
     imgUrl: '/logos/react.png',
   },
   {
+    name: 'Java',
+    imgUrl: '/logos/java.png',
+  },
+  {
     name: 'Spring boot',
     imgUrl: '/logos/spring-boot.png',
   },
@@ -60,6 +64,10 @@ const carouselData: CarouselData[] = [
   {
     name: 'Sass',
     imgUrl: '/logos/sass.png',
+  },
+  {
+    name: 'Dart',
+    imgUrl: '/logos/dart.png',
   },
 ]
 

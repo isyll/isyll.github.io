@@ -1,10 +1,14 @@
 import Heading1 from '@/components/custom/Heading1'
 import SearchInput from '@/components/custom/SearchInput'
+import { getAsset } from '@/data/assets'
 import classes from '@/data/classes'
 import projects, { Project } from '@/data/projects'
 import useSearch from '@/hooks/useSearch'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { AiOutlineDeploymentUnit } from 'react-icons/ai'
+import { FaLinkSlash } from 'react-icons/fa6'
+import { GoClock } from 'react-icons/go'
 
 const projectTechs = new Set<string>(
   projects.map((project) => project.techs.map((tech) => tech.name)).flat(),
@@ -54,9 +58,9 @@ export default function Projects() {
           )
         })}
       </div>
-      <div className=' grid grid-cols-2'>
+      <div className='w-full grid grid-cols-2 gap-6'>
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} className='' />
         ))}
       </div>
     </div>
@@ -69,5 +73,51 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, className }: ProjectCardProps) {
-  return <div className={cn(className)}>{project.name}</div>
+  const mainTech = useMemo(() => {
+    return project.techs.find((tech) => tech.main !== undefined && tech.main)
+  }, [project.techs])
+
+  return (
+    <div
+      className={cn(
+        'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6',
+        className,
+      )}
+    >
+      <div className='flex flex-col gap-4'>
+        <img
+          src={mainTech?.imgUrl}
+          alt={mainTech?.name ?? getAsset('noImg')!}
+          width={36}
+        />
+        <div className='flex justify-between'>
+          <h3 className='font-bold text-lg'>{project.name}</h3>
+          <a
+            href={project.githubUrl}
+            target='_blank'
+            className='border border-primary-dark dark:border-primary-light rounded-xl bg-transparent hover:bg-primary-dark hover:dark:bg-primary-light px-3 py-2 transition-colors'
+          >
+            <FaLinkSlash />
+          </a>
+        </div>
+        <div className='flex flex-col gap-3'>
+          <hr className='border border-primary-dark dark:border-primary-light brightness-150' />
+          <div className='flex gap-2'>
+            <AiOutlineDeploymentUnit size={20} />
+            <span className='text-primary-light dark:text-primary-dark text-sm'>
+              {project.type}
+            </span>
+          </div>
+          <hr className='border border-primary-dark dark:border-primary-light brightness-150' />
+          <div className='flex gap-2'>
+            <GoClock size={20} />
+            <span className='text-primary-light dark:text-primary-dark text-sm'>
+              {`${project.days} ${project.days > 1 ? 'days' : 'day'}`}
+            </span>
+          </div>
+        </div>
+        <p className='py-6 text-[14px]'>{project.description}</p>
+      </div>
+    </div>
+  )
 }
