@@ -58,7 +58,7 @@ export default function Projects() {
           )
         })}
       </div>
-      <div className='w-full grid grid-cols-2 gap-6'>
+      <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6'>
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} className='' />
         ))}
