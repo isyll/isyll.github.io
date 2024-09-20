@@ -5,6 +5,7 @@ import skills, { Skill } from '@/data/skills'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import useSearch from '@/hooks/useSearch'
+import { getAsset } from '@/data/assets'
 
 export default function Skills() {
   const { searchValue, handleSearch } = useSearch('')
@@ -14,9 +15,7 @@ export default function Skills() {
     const value = searchValue.trim().toLowerCase()
     skillsData = skills.map((skill) => ({
       ...skill,
-      skills: skill.skills.filter((item) =>
-        item.name.toLowerCase().includes(value),
-      ),
+      skills: skill.skills.filter((item) => item.toLowerCase().includes(value)),
     }))
   }
 
@@ -54,7 +53,8 @@ function SkillCard({ skill }: SkillCardProps) {
       </div>
       <div className=' grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:gap-6 gap-0'>
         {skill.skills.map((data, index) => {
-          const hasDark = data.dark !== undefined
+          const asset = getAsset(data)!
+          const hasDark = asset.dark !== undefined
 
           const element = (className: string) => (
             <motion.div
@@ -64,8 +64,8 @@ function SkillCard({ skill }: SkillCardProps) {
                 className,
               )}
             >
-              <img src={data.imgUrl} alt={data.name} width={50} />
-              <h3>{data.name}</h3>
+              <img src={asset.url} alt={asset.name} width={50} />
+              <h3>{asset.name}</h3>
             </motion.div>
           )
 

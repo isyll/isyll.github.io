@@ -9,9 +9,10 @@ import { useMemo, useState } from 'react'
 import { AiOutlineDeploymentUnit } from 'react-icons/ai'
 import { FaLinkSlash } from 'react-icons/fa6'
 import { GoClock } from 'react-icons/go'
+import Tilt from 'react-parallax-tilt'
 
-const projectTechs = new Set<string>(
-  projects.map((project) => project.techs.map((tech) => tech.name)).flat(),
+const projectTechs = Array.from(
+  new Set<string>(projects.map((project) => project.techs).flat()),
 )
 
 export default function Projects() {
@@ -39,7 +40,7 @@ export default function Projects() {
         onChange={handleSearch}
       />
       <div className='flex self-start gap-4 flex-wrap'>
-        {Array.from(projectTechs).map((tech, index) => {
+        {projectTechs.map((tech, index) => {
           const isSelected = selectedTechs.has(tech)
 
           return (
@@ -73,51 +74,92 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, className }: ProjectCardProps) {
-  const mainTech = useMemo(() => {
-    return project.techs.find((tech) => tech.main !== undefined && tech.main)
-  }, [project.techs])
+  const mainTech = project.techs[0]
+  const asset = useMemo(
+    () => getAsset(mainTech) ?? getAsset('noImg')!,
+    [mainTech],
+  )
 
   return (
-    <div
-      className={cn(
-        'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6',
-        className,
-      )}
+    <Tilt
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      glareEnable={true}
+      glareMaxOpacity={0.3}
+      glareColor={asset.primaryColor}
+      glarePosition='all'
+      scale={1}
+      transitionSpeed={1000}
     >
-      <div className='flex flex-col gap-4'>
-        <img
-          src={mainTech?.imgUrl}
-          alt={mainTech?.name ?? getAsset('noImg')!}
-          width={36}
-        />
-        <div className='flex justify-between'>
-          <h3 className='font-bold text-lg'>{project.name}</h3>
-          <a
-            href={project.githubUrl}
-            target='_blank'
-            className='border border-primary-dark dark:border-primary-light rounded-xl bg-transparent hover:bg-primary-dark hover:dark:bg-primary-light px-3 py-2 transition-colors'
-          >
-            <FaLinkSlash />
-          </a>
-        </div>
-        <div className='flex flex-col gap-3'>
-          <hr className='border border-primary-dark dark:border-primary-light brightness-150' />
-          <div className='flex gap-2'>
-            <AiOutlineDeploymentUnit size={20} />
-            <span className='text-primary-light dark:text-primary-dark text-sm'>
-              {project.type}
-            </span>
+      <div
+        className={cn(
+          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6 cursor-pointer bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
+          className,
+        )}
+      >
+        <div className='flex flex-col gap-4 h-full'>
+          <img src={asset.url} alt={asset.name} width={36} />
+          <div className='flex justify-between'>
+            <h3 className='font-bold text-lg'>{project.name}</h3>
+            <a
+              href={project.githubUrl}
+              target='_blank'
+              className='border border-primary-dark dark:border-primary-light rounded-xl bg-transparent hover:bg-primary-dark hover:dark:bg-primary-light px-3 py-2 transition-colors'
+            >
+              <FaLinkSlash />
+            </a>
           </div>
-          <hr className='border border-primary-dark dark:border-primary-light brightness-150' />
-          <div className='flex gap-2'>
-            <GoClock size={20} />
-            <span className='text-primary-light dark:text-primary-dark text-sm'>
-              {`${project.days} ${project.days > 1 ? 'days' : 'day'}`}
-            </span>
+          <div className='flex flex-col gap-3'>
+            <Hr />
+            <div className='flex gap-2'>
+              <AiOutlineDeploymentUnit size={20} />
+              <span className='text-primary-light dark:text-primary-dark text-sm'>
+                {project.type}
+              </span>
+            </div>
+            <Hr />
+            <div className='flex gap-2'>
+              <GoClock size={20} />
+              <span className='text-primary-light dark:text-primary-dark text-sm'>
+                {`${project.days} ${project.days > 1 ? 'days' : 'day'}`}
+              </span>
+            </div>
+            <Hr />
+          </div>
+          <p className='grow py-6 text-[14px]'>{project.description}</p>
+          <div className='flex justify-between items-end'>
+            {[project.startDate, project.endDate].map((e) => (
+              <div
+                className={cn(
+                  'border rounded-2xl px-3 py-2 text-[8px] text-primary-light dark:text-primary-dark dark:border-secondary-dark cursor-pointer transition-all hover:dark:bg-primary-light hover:bg-primary-dark',
+                )}
+              >
+                {e}
+              </div>
+            ))}
+          </div>
+          <Hr />
+          <div className='flex gap-4'>
+            {project.techs.map((tech) => {
+              const asset = getAsset(tech)!
+
+              return (
+                <div className='content-center h-[32px] w-[32px] p-2 border border-primary-dark dark:border-primary-light brightness-75 dark:brightness-150 rounded-lg transition-all hover:dark:bg-primary-light hover:bg-primary-dark'>
+                  <img
+                    src={asset.url}
+                    alt={asset.name}
+                    className='opacity-90'
+                  />
+                </div>
+              )
+            })}
           </div>
         </div>
-        <p className='py-6 text-[14px]'>{project.description}</p>
       </div>
-    </div>
+    </Tilt>
   )
 }
+
+const Hr = () => (
+  <hr className='border border-primary-dark dark:border-primary-light brightness-90 dark:brightness-150' />
+)

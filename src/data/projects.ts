@@ -7,14 +7,7 @@ export interface Project {
   githubUrl: string
   startDate: string
   endDate: string
-  techs: {
-    name: string
-    imgUrl: string
-    main?: boolean
-    dark?: {
-      imgUrl: string
-    }
-  }[]
+  techs: string[]
 }
 
 const projects: Project[] = [
@@ -27,17 +20,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/isyll/wave',
     startDate: 'May 2024',
     endDate: 'August 2024',
-    techs: [
-      {
-        name: 'Dart',
-        imgUrl: '/logos/dart.png',
-      },
-      {
-        name: 'Flutter',
-        main: true,
-        imgUrl: '/logos/flutter.png',
-      },
-    ],
+    techs: ['Flutter', 'Dart'],
   },
   {
     name: 'My portfolio',
@@ -48,17 +31,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/isyll/isyll.github.io',
     startDate: 'September 2024',
     endDate: 'September 2024',
-    techs: [
-      {
-        name: 'React',
-        main: true,
-        imgUrl: '/logos/react.png',
-      },
-      {
-        name: 'TypeScript',
-        imgUrl: '/logos/typescript.png',
-      },
-    ],
+    techs: ['React', 'TypeScript'],
   },
 ]
 

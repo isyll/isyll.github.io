@@ -13,6 +13,7 @@ import { Carousel } from '@/components/ui/carousel'
 import { useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import Heading1 from '@/components/custom/Heading1'
+import { getAsset } from '@/data/assets'
 
 export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
@@ -48,7 +49,11 @@ export default function Home() {
       >
         <CarouselContent>
           {carouselData.map((data, index) => {
-            const hasDark = data.dark !== undefined
+            const asset = getAsset(data)!
+            if (asset == null) {
+              console.log(data)
+            }
+            const hasDark = asset.dark !== undefined
             const width = 100
             const style = 'flex-col items-center gap-3'
 
@@ -61,17 +66,13 @@ export default function Home() {
                     hasDark ? 'flex dark:hidden' : '',
                   )}
                 >
-                  <img src={data.imgUrl} alt={data.name} width={width} />
-                  <h4>{data.name}</h4>
+                  <img src={asset.url} alt={asset.name} width={width} />
+                  <h4>{asset.name}</h4>
                 </div>
                 {hasDark && (
                   <div className={clsx(style, 'hidden dark:flex')}>
-                    <img
-                      src={data.dark!.imgUrl}
-                      alt={data.name}
-                      width={width}
-                    />
-                    <h4>{data.name}</h4>
+                    <img src={asset.dark!.url} alt={asset.name} width={width} />
+                    <h4>{asset.name}</h4>
                   </div>
                 )}
               </CarouselItem>
