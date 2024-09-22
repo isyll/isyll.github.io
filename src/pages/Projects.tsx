@@ -17,7 +17,7 @@ const projectTechs = Array.from(
 
 export default function Projects() {
   const { searchValue, handleSearch } = useSearch('')
-  const [selectedTechs, setSelectedTechs] = useState(new Set<string>())
+  const [selectedTechs, setSelectedTechs] = useState<string[]>([])
   const toggleSelectedTechs = (tech: string) => {
     setSelectedTechs((prevSelectedTechs) => {
       const newSelectedTechs = new Set(prevSelectedTechs)
@@ -27,9 +27,14 @@ export default function Projects() {
       } else {
         newSelectedTechs.add(tech)
       }
-      return newSelectedTechs
+      return Array.from(newSelectedTechs)
     })
   }
+  const filtered = projects.filter((project) =>
+    project.techs.some((tech) =>
+      selectedTechs.length > 0 ? selectedTechs.includes(tech) : true,
+    ),
+  )
 
   return (
     <div className={cn(classes.rootPadding, classes.content)}>
@@ -41,7 +46,7 @@ export default function Projects() {
       />
       <div className='flex self-start gap-4 flex-wrap'>
         {projectTechs.map((tech, index) => {
-          const isSelected = selectedTechs.has(tech)
+          const isSelected = selectedTechs.includes(tech)
 
           return (
             <div
@@ -60,7 +65,7 @@ export default function Projects() {
         })}
       </div>
       <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6'>
-        {projects.map((project, index) => (
+        {filtered.map((project, index) => (
           <ProjectCard key={index} project={project} className='' />
         ))}
       </div>
