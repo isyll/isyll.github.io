@@ -1,4 +1,5 @@
 import Heading1 from '@/components/custom/Heading1'
+import { Hr } from '@/components/custom/Hr'
 import SearchInput from '@/components/custom/SearchInput'
 import { getAsset } from '@/data/assets'
 import classes from '@/data/classes'
@@ -133,8 +134,9 @@ function ProjectCard({ project, className }: ProjectCardProps) {
           </div>
           <p className='grow py-6 text-[14px]'>{project.description}</p>
           <div className='flex justify-between items-end'>
-            {[project.startDate, project.endDate].map((e) => (
+            {[project.startDate, project.endDate].map((e, index) => (
               <div
+                key={index}
                 className={cn(
                   'border rounded-2xl px-3 py-2 text-[8px] text-primary-light dark:text-primary-dark dark:border-secondary-dark cursor-pointer transition-all hover:dark:bg-primary-light hover:bg-primary-dark',
                 )}
@@ -145,11 +147,14 @@ function ProjectCard({ project, className }: ProjectCardProps) {
           </div>
           <Hr />
           <div className='flex gap-4'>
-            {project.techs.map((tech) => {
+            {project.techs.map((tech, index) => {
               const asset = getAsset(tech)!
 
               return (
-                <div className='content-center h-[32px] w-[32px] p-2 border border-primary-dark dark:border-primary-light brightness-75 dark:brightness-150 rounded-lg transition-all hover:dark:bg-primary-light hover:bg-primary-dark'>
+                <div
+                  key={index}
+                  className='content-center h-[32px] w-[32px] p-2 border border-primary-dark dark:border-primary-light brightness-75 dark:brightness-150 rounded-lg transition-all hover:dark:bg-primary-light hover:bg-primary-dark'
+                >
                   <img
                     src={asset.url}
                     alt={asset.name}
@@ -164,7 +169,3 @@ function ProjectCard({ project, className }: ProjectCardProps) {
     </Tilt>
   )
 }
-
-const Hr = () => (
-  <hr className='border border-primary-dark dark:border-primary-light brightness-90 dark:brightness-150' />
-)

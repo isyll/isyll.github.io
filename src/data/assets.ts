@@ -95,6 +95,11 @@ const assets: Asset[] = [
     url: '/logos/laravel.png',
     primaryColor: '#ff2d20',
   },
+  {
+    name: 'PHP',
+    url: '/logos/php.png',
+    primaryColor: '#617cbe',
+  },
 ]
 
 export default assets
