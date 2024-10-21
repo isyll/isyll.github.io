@@ -7,7 +7,12 @@ import useSearch from '@/hooks/useSearch'
 import { cn, getRandomItem } from '@/lib/utils'
 import { useMemo } from 'react'
 import { IoLocationOutline } from 'react-icons/io5'
+import { FiClock } from 'react-icons/fi'
 import Tilt from 'react-parallax-tilt'
+import { Bolt } from 'lucide-react'
+import { PiBuildings } from 'react-icons/pi'
+import { FaNetworkWired } from 'react-icons/fa6'
+import { MdOutlineDateRange } from 'react-icons/md'
 
 export default function Experiences() {
   const { searchValue, handleSearch } = useSearch('')
@@ -20,16 +25,42 @@ export default function Experiences() {
         onChange={handleSearch}
         value={searchValue}
       />
-      <div className='w-full flex flex-col'>
-        {experiences.map((exp, index) => (
-          <ExpCard
-            key={index}
-            exp={exp}
-            className={cn('w-[48%]', {
-              'ms-auto': (index + 1) % 2 === 0,
-            })}
-          />
-        ))}
+      <div className='w-full relative flex flex-col gap-10 items-center'>
+        <div className='hidden md:flex absolute -z-10 top-0 bottom-0 w-[0.5px] bg-primary-dark dark:bg-primary-light' />
+        {experiences
+          .filter((item) => {
+            const value = searchValue.trim().toLocaleLowerCase()
+
+            if (value.length > 0) {
+              return (
+                item.name.toLocaleLowerCase().includes(value) ||
+                item.company.toLocaleLowerCase().includes(value)
+              )
+            }
+
+            return true
+          })
+          .map((exp, index) => {
+            const start = index % 2 === 0
+
+            return (
+              <div
+                key={index}
+                className={cn('w-full flex gap-1 items-center px-2 md:px-0', {
+                  'flex-row-reverse': !start,
+                })}
+              >
+                <ExpCard exp={exp} className='flex-1' />
+                <div className='p-3 bg-white dark:bg-black hidden md:inline'>
+                  <Bolt
+                    className='text-primary-light dark:text-primary-dark'
+                    size={16}
+                  />
+                </div>
+                <div className='flex-1 hidden md:flex' />
+              </div>
+            )
+          })}
       </div>
     </div>
   )
@@ -47,6 +78,9 @@ function ExpCard({ exp, className }: ExpCardProps) {
     [mainTech],
   )
   const img = getAsset('noImg')!
+  const line = (
+    <div className='h-[0.5px] w-full bg-primary-dark dark:bg-primary-light dark:brightness-150' />
+  )
 
   return (
     <Tilt
@@ -71,14 +105,47 @@ function ExpCard({ exp, className }: ExpCardProps) {
       >
         <div className='flex items-start gap-4 h-full'>
           <img src={img.url} alt={img.name} width={52} />
-          <div className='flex flex-col'>
+          <div className='flex flex-col gap-2'>
             <h3 className='font-bold text-lg'>{exp.name}</h3>
-            <div className='flex gap-2'>
-              <div className='flex gap-1 items-center border border-primary-dark dark:border-primary-light rounded-xl bg-transparent hover:bg-primary-dark hover:dark:bg-primary-light p-2 text-[10px] transition-colors'>
-                <IoLocationOutline size={14} />
-                {exp.location}
-              </div>
+            <div className='flex gap-2 flex-wrap mt-2'>
+              {[
+                {
+                  icon: <IoLocationOutline size={14} />,
+                  text: exp.location,
+                },
+                {
+                  icon: <PiBuildings size={14} />,
+                  text: exp.contract,
+                },
+                {
+                  icon: <FaNetworkWired size={14} />,
+                  text: exp.workMode,
+                },
+              ].map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className='flex gap-1 items-center border border-primary-dark dark:border-primary-light rounded-full bg-transparent hover:bg-primary-dark hover:dark:bg-primary-light p-1 px-2 text-[10px] transition-colors'
+                  >
+                    {item.icon}
+                    {item.text}
+                  </div>
+                )
+              })}
             </div>
+            <div className='flex gap-1 items-center mt-4'>
+              <MdOutlineDateRange />
+              <div className='w-1' />
+              {exp.startDate} &ndash; {exp.endDate}
+            </div>
+            {line}
+            <div className='flex gap-1 items-center'>
+              <FiClock />
+              <div className='w-1' />
+              {exp.duration}
+            </div>
+            {line}
+            <div className='mt-4'>{exp.description}</div>
           </div>
         </div>
       </div>

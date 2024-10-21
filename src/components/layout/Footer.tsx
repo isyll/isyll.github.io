@@ -13,7 +13,7 @@ export default function Footer({ className }: Props) {
   return (
     <footer
       className={cn(
-        ' flex justify-end',
+        ' flex justify-center',
         classes.rootPadding,
         'py-4',
         className,
