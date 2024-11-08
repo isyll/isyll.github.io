@@ -13,8 +13,8 @@ export interface Project {
 const projects: Project[] = [
   {
     name: 'Wave Clone',
-    type: 'Mobile app',
-    description: 'Clone of the famous money transfer app Wave.',
+    type: 'Mobile App',
+    description: 'A clone of the famous money transfer app Wave.',
     illustrations: ['/images/wave-clone.png'],
     days: 43,
     githubUrl: 'https://github.com/isyll/wave',
@@ -27,11 +27,23 @@ const projects: Project[] = [
     type: 'Single Page App',
     description: 'My portfolio website.',
     illustrations: [],
-    days: 5,
+    days: 15,
     githubUrl: 'https://github.com/isyll/isyll.github.io',
     startDate: 'September 2024',
     endDate: 'September 2024',
-    techs: ['React', 'TypeScript'],
+    techs: ['React', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    name: 'VLSM Calculator',
+    type: 'Single Page App',
+    description:
+      'A tool for efficient IP address allocation using Variable Length Subnet Masking (VLSM).',
+    illustrations: [],
+    days: 30,
+    githubUrl: 'https://github.com/isyll/vlsmcalculator',
+    startDate: 'October 2024',
+    endDate: 'November 2024',
+    techs: ['React', 'TypeScript', 'Tailwind CSS'],
   },
 ]
 
