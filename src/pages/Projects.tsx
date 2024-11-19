@@ -31,11 +31,15 @@ export default function Projects() {
       return Array.from(newSelectedTechs)
     })
   }
-  const filtered = projects.filter((project) =>
-    project.techs.some((tech) =>
-      selectedTechs.length > 0 ? selectedTechs.includes(tech) : true,
-    ),
-  )
+  const filtered = projects
+    .filter((project) =>
+      project.techs.some((tech) =>
+        selectedTechs.length > 0 ? selectedTechs.includes(tech) : true,
+      ),
+    )
+    .filter((project) =>
+      project.name.toLowerCase().includes(searchValue.trim().toLowerCase()),
+    )
 
   return (
     <div className={cn(classes.rootPadding, classes.content)}>
@@ -145,7 +149,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
           <Hr />
           <div className='flex gap-4'>
             {project.techs.map((tech, index) => {
-              const asset =  getAsset(tech)
+              const asset = getAsset(tech)
 
               return (
                 <div
