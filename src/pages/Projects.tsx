@@ -81,10 +81,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, className }: ProjectCardProps) {
   const mainTech = project.techs[0]
-  const asset = useMemo(
-    () => getAsset(mainTech) ?? getAsset('noImg')!,
-    [mainTech],
-  )
+  const asset = useMemo(() => getAsset(mainTech), [mainTech])
 
   return (
     <Tilt
@@ -148,7 +145,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
           <Hr />
           <div className='flex gap-4'>
             {project.techs.map((tech, index) => {
-              const asset = getAsset(tech)!
+              const asset =  getAsset(tech)
 
               return (
                 <div
@@ -157,7 +154,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
                 >
                   <img
                     src={asset.url}
-                    alt={asset.name}
+                    alt={'Spring Boot'}
                     className='opacity-90'
                   />
                 </div>

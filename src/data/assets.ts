@@ -8,14 +8,19 @@ export interface Asset {
   }
 }
 
-export const getAsset = (name: string): Asset | null =>
-  assets.find((asset) => asset.name == name) ?? null
+export const getAsset = (name: string): Asset =>
+  assets.find((asset) => asset.name === name)!
 
-const assets: Asset[] = [
+export const assets: Asset[] = [
   {
     name: 'noImg',
     url: '/no-img.svg',
     primaryColor: 'grey',
+  },
+  {
+    name: 'Tailwind CSS',
+    url: '/logos/tailwindcss.svg',
+    primaryColor: '#38bdf8',
   },
   {
     name: 'Spring Boot',
@@ -101,5 +106,3 @@ const assets: Asset[] = [
     primaryColor: '#617cbe',
   },
 ]
-
-export default assets
