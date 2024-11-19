@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string
   name: string
   type: string
   description: string
@@ -12,6 +13,7 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    slug: 'wave-clone',
     name: 'Wave Clone',
     type: 'Mobile App',
     description: 'A clone of the famous money transfer app Wave.',
@@ -23,6 +25,7 @@ const projects: Project[] = [
     techs: ['Flutter', 'Dart'],
   },
   {
+    slug: 'my-portfolio',
     name: 'My portfolio',
     type: 'Single Page App',
     description: 'My portfolio website.',
@@ -34,6 +37,7 @@ const projects: Project[] = [
     techs: ['React', 'TypeScript', 'Tailwind CSS'],
   },
   {
+    slug: 'vlsm-calculator',
     name: 'VLSM Calculator',
     type: 'Single Page App',
     description:

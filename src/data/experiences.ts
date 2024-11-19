@@ -1,4 +1,5 @@
 export interface Experience {
+  slug: string
   name: string
   description: string
   startDate: string
@@ -13,6 +14,7 @@ export interface Experience {
 
 const experiences: Experience[] = [
   {
+    slug: 'sonatel-internship',
     name: 'Full-stack Developer',
     description:
       "Working on great applications mostly for the group's employees using microservices architecture and REST APIs.",
@@ -26,6 +28,7 @@ const experiences: Experience[] = [
     techs: ['Symfony', 'Laravel', 'Angular'],
   },
   {
+    slug: 'kati360-internship',
     name: 'React Developer',
     description:
       'Creating amazing and high-performance e-commerce websites based on React technologies.',
@@ -39,6 +42,7 @@ const experiences: Experience[] = [
     techs: ['React', 'Express.js', 'Redux'],
   },
   {
+    slug: 'dscale-freelance',
     name: 'Web Developer',
     description:
       'Working on modern websites based on Next.js and CMS like Wordpress.',

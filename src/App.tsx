@@ -21,8 +21,12 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/skills' element={<Skills />} />
           <Route path='/education' element={<Education />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/experiences' element={<Experiences />} />
+          <Route path='/projects' element={<Projects />}>
+            <Route path=':slug' element={<Projects />} />
+          </Route>
+          <Route path='/experiences' element={<Experiences />}>
+            <Route path=':slug' element={<Experiences />} />
+          </Route>
           <Route path='/cv' element={<Cv />} />
         </Route>
       </Routes>

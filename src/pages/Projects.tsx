@@ -11,12 +11,37 @@ import { AiOutlineDeploymentUnit } from 'react-icons/ai'
 import { FaLinkSlash } from 'react-icons/fa6'
 import { GoClock } from 'react-icons/go'
 import Tilt from 'react-parallax-tilt'
+import { Navigate, useParams } from 'react-router-dom'
 
 const projectTechs = Array.from(
   new Set<string>(projects.map((project) => project.techs).flat()),
 )
 
 export default function Projects() {
+  const { slug } = useParams()
+
+  if (slug) {
+    return <ProjectPage slug={slug} />
+  }
+
+  return <ProjectsList />
+}
+
+type ProjectPageProps = {
+  slug: string
+}
+
+function ProjectPage({ slug }: ProjectPageProps) {
+  const project = projects.find((item) => item.slug === slug)!
+
+  if (!project) {
+    return <Navigate to='/' replace />
+  }
+
+  return <div>name: {project.name}</div>
+}
+
+function ProjectsList() {
   const { searchValue, handleSearch } = useSearch('')
   const [selectedTechs, setSelectedTechs] = useState<string[]>([])
   const toggleSelectedTechs = (tech: string) => {
@@ -98,7 +123,8 @@ function ProjectCard({ project, className }: ProjectCardProps) {
       scale={1}
       transitionSpeed={1000}
     >
-      <div
+      <a
+        href={`/#/projects/${project.slug}`}
         className={cn(
           'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6 cursor-pointer bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
           className,
@@ -166,7 +192,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
             })}
           </div>
         </div>
-      </div>
+      </a>
     </Tilt>
   )
 }
