@@ -9,6 +9,7 @@ export default function Footer({ className }: Props) {
   // const asset = useMemo(() => getAsset('React')!, [])
   const textClass =
     'text-primary-light dark:text-primary-dark brightness-125 dark:brightness-75'
+  const year = new Date().getFullYear()
 
   return (
     <footer
@@ -23,7 +24,7 @@ export default function Footer({ className }: Props) {
       <h3 className={cn(textClass, 'flex items-center gap-2')}>
         This site was built with <SpinningImage asset={asset} />
       </h3> */}
-      <p className={textClass}>&copy; 2024 Ibrahima Sylla</p>
+      <p className={textClass}>&copy; {year} Ibrahima Sylla</p>
     </footer>
   )
 }

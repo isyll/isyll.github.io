@@ -123,10 +123,10 @@ function ExpCard({ exp, className }: ExpCardProps) {
       transitionSpeed={1000}
       className={className}
     >
-      <a
-        href={`/#/experiences/${exp.slug}`}
+      <div
+        // href={`/#/experiences/${exp.slug}`}
         className={cn(
-          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[350px] p-6 cursor-pointer bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
+          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[350px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
         )}
       >
         <div className='flex items-start gap-4 h-full'>
@@ -174,7 +174,7 @@ function ExpCard({ exp, className }: ExpCardProps) {
             <div className='mt-4'>{exp.description}</div>
           </div>
         </div>
-      </a>
+      </div>
     </Tilt>
   )
 }

@@ -123,10 +123,10 @@ function ProjectCard({ project, className }: ProjectCardProps) {
       scale={1}
       transitionSpeed={1000}
     >
-      <a
-        href={`/#/projects/${project.slug}`}
+      <div
+        // href={`/#/projects/${project.slug}`}
         className={cn(
-          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6 cursor-pointer bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
+          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[500px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
           className,
         )}
       >
@@ -192,7 +192,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
             })}
           </div>
         </div>
-      </a>
+      </div>
     </Tilt>
   )
 }
