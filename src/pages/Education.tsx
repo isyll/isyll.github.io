@@ -8,8 +8,8 @@ import { IoLocationOutline } from 'react-icons/io5'
 import Tilt from 'react-parallax-tilt'
 import { Bolt, Clock } from 'lucide-react'
 import education, { Education } from '@/data/education'
-import useTheme from '@/hooks/useTheme'
 import { Fragment, useMemo } from 'react'
+import { useDarkMode } from 'usehooks-ts'
 
 export default function EducationPage() {
   const { searchValue, handleSearch } = useSearch('')
@@ -70,7 +70,8 @@ function EducationCard({ education, className }: EducationCardProps) {
   const line = (
     <div className='h-[0.5px] w-full bg-primary-dark dark:bg-primary-light dark:brightness-150' />
   )
-  const theme = useTheme()
+  const { isDarkMode } = useDarkMode()
+
   const infos = useMemo(
     () => [
       {
@@ -91,7 +92,7 @@ function EducationCard({ education, className }: EducationCardProps) {
       tiltMaxAngleY={10}
       glareEnable={true}
       glareMaxOpacity={0.3}
-      glareColor={theme === 'light' ? '#222' : '#888'}
+      glareColor={isDarkMode ? '#888' : '#222'}
       glarePosition='all'
       scale={1}
       transitionSpeed={1000}
@@ -106,8 +107,8 @@ function EducationCard({ education, className }: EducationCardProps) {
             <div className='flex flex-col gap-2 mt-2'>
               {line}
               {infos.map((item, index) => (
-                <Fragment>
-                  <div key={index} className='flex gap-1 items-center p-1 px-2'>
+                <Fragment key={index}>
+                  <div className='flex gap-1 items-center p-1 px-2'>
                     {item.icon}
                     {item.text}
                   </div>
