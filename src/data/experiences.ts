@@ -55,6 +55,20 @@ const experiences: Experience[] = [
     contract: 'Freelance',
     techs: ['Next.js', 'React', 'PHP'],
   },
+  {
+    slug: 'softvalley-labs',
+    name: 'Apps Developer',
+    description:
+      'Developing professional applications in a wide range of technologies.',
+    startDate: 'December 2024',
+    endDate: 'Now',
+    duration: 'Still in date',
+    company: 'Soft Valley Labs',
+    workMode: 'On site',
+    location: 'Dakar, Sénégal',
+    contract: 'Full-time',
+    techs: ['Next.js', 'React'],
+  },
 ]
 
 export default experiences
