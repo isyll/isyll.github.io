@@ -97,7 +97,7 @@ function EducationCard({ education, className }: EducationCardProps) {
       transitionSpeed={1000}
       className={className}
     >
-      <div className='flex flex-col border border-primary-dark dark:border-primary-light rounded-xl h-[450px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200'>
+      <div className='flex flex-col border border-primary-dark dark:border-primary-light rounded-xl h-[500px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200'>
         <div className='flex flex-col gap-6 h-full'>
           <img src={img.url} alt={img.name} width={52} />
           <div className='flex flex-col gap-4'>

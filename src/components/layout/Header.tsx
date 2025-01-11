@@ -98,9 +98,9 @@ export default function Header({ className }: Props) {
           </ul>
         </nav>
         <div className='flex flex-col'>
-          <button onClick={handleSearch} className='header-btn-mobile'>
+          {/* <button onClick={handleSearch} className='header-btn-mobile'>
             <MdOutlineSearch size={24} /> Rechercher
-          </button>
+          </button> */}
           <button onClick={toggleDarkMode} className='header-btn-mobile'>
             {dark ? (
               <MdOutlineDarkMode size={24} />
