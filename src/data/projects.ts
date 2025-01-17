@@ -43,7 +43,7 @@ const projects: Project[] = [
     description:
       'A tool for efficient IP address allocation using Variable Length Subnet Masking (VLSM).',
     illustrations: [],
-    days: 30,
+    days: 4,
     githubUrl: 'https://github.com/isyll/vlsmcalculator',
     startDate: 'October 2024',
     endDate: 'November 2024',

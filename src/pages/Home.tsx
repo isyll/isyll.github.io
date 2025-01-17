@@ -8,19 +8,19 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import carouselData from '@/data/carousel-data'
-import clsx from 'clsx'
 import { Carousel } from '@/components/ui/carousel'
 import { useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import Heading1 from '@/components/custom/Heading1'
 import { getAsset } from '@/data/assets'
+import { cn } from '@/lib/utils'
 
 export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
 
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex md:flex-row flex-col items-center justify-center md:justify-between h-full gap-14 md:gap-20 my-5 md:my-0',
         classes.rootPadding,
       )}
@@ -60,7 +60,7 @@ export default function Home() {
             return (
               <CarouselItem key={index} className='flex justify-center'>
                 <div
-                  className={clsx(
+                  className={cn(
                     style,
                     'flex',
                     hasDark ? 'flex dark:hidden' : '',
@@ -70,7 +70,7 @@ export default function Home() {
                   <h4>{asset.name}</h4>
                 </div>
                 {hasDark && (
-                  <div className={clsx(style, 'hidden dark:flex')}>
+                  <div className={cn(style, 'hidden dark:flex')}>
                     <img src={asset.dark!.url} alt={asset.name} width={width} />
                     <h4>{asset.name}</h4>
                   </div>

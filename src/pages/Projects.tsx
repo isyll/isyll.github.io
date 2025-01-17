@@ -118,7 +118,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
       tiltMaxAngleY={10}
       glareEnable={true}
       glareMaxOpacity={0.3}
-      glareColor={asset.primaryColor}
+      glareColor={asset?.primaryColor}
       glarePosition='all'
       scale={1}
       transitionSpeed={1000}
@@ -131,7 +131,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
         )}
       >
         <div className='flex flex-col gap-4 h-full'>
-          <img src={asset.url} alt={asset.name} width={36} />
+          <img src={asset?.url} alt={asset?.name} width={36} />
           <div className='flex justify-between'>
             <h3 className='font-bold text-lg'>{project.name}</h3>
             <a
@@ -183,7 +183,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
                   className='content-center h-[32px] w-[32px] p-2 border border-primary-dark dark:border-primary-light brightness-75 dark:brightness-150 rounded-lg transition-all hover:dark:bg-primary-light hover:bg-primary-dark'
                 >
                   <img
-                    src={asset.url}
+                    src={asset?.url}
                     alt={'Spring Boot'}
                     className='opacity-90'
                   />
