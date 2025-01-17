@@ -57,7 +57,7 @@ const experiences: Experience[] = [
   },
   {
     slug: 'softvalley-labs',
-    name: 'Apps Developer',
+    name: 'Software Developer',
     description:
       'Developing professional applications in a wide range of technologies.',
     startDate: 'December 2024',
@@ -67,7 +67,7 @@ const experiences: Experience[] = [
     workMode: 'On site',
     location: 'Dakar, Sénégal',
     contract: 'Full-time',
-    techs: ['Next.js', 'React'],
+    techs: ['Next.js', 'React', 'Django'],
   },
 ]
 

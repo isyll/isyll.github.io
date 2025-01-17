@@ -8,14 +8,19 @@ export interface Asset {
   }
 }
 
-export const getAsset = (name: string): Asset =>
-  assets.find((asset) => asset.name === name)!
+export const getAsset = (name: string): Asset | undefined =>
+  assets.find((asset) => asset.name === name)
 
 export const assets: Asset[] = [
   {
     name: 'noImg',
     url: '/no-img.svg',
     primaryColor: 'grey',
+  },
+  {
+    name: 'Django',
+    url: '/logos/django.png',
+    primaryColor: '#103e2e',
   },
   {
     name: 'Tailwind CSS',

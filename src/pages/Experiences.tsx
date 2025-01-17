@@ -14,6 +14,12 @@ import { PiBuildings } from 'react-icons/pi'
 import { FaNetworkWired } from 'react-icons/fa6'
 import { MdOutlineDateRange } from 'react-icons/md'
 import { Navigate, useParams } from 'react-router-dom'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 export default function Experiences() {
   const { slug } = useParams()
@@ -126,7 +132,7 @@ function ExpCard({ exp, className }: ExpCardProps) {
       <div
         // href={`/#/experiences/${exp.slug}`}
         className={cn(
-          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[350px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
+          'flex flex-col border border-primary-dark dark:border-primary-light rounded-lg h-[400px] p-6 cursor-default bg-white dark:bg-black hover:brightness-100 hover:dark:brightness-200',
         )}
       >
         <div className='flex items-start gap-4 h-full'>
@@ -171,7 +177,29 @@ function ExpCard({ exp, className }: ExpCardProps) {
               {exp.duration}
             </div>
             {line}
-            <div className='mt-4'>{exp.description}</div>
+            <div className='my-4'>{exp.description}</div>
+            <div className='flex gap-4'>
+              {exp.techs.map((tech, index) => {
+                const asset = getAsset(tech)
+                return asset ? (
+                  <TooltipProvider delayDuration={0}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div
+                          key={index}
+                          className='flex justify-center items-center cursor-pointer p-1 border border-primary-dark dark:border-primary-light rounded-xl'
+                        >
+                          <img src={asset.url} width={28} />
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{tech}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ) : null
+              })}
+            </div>
           </div>
         </div>
       </div>
